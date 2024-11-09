@@ -27,9 +27,3 @@ mandatory = true
 versionRange = "[1.0.16,)"
 ordering = "AFTER"
 side = "BOTH"
-[[dependencies.ialdgtcore]]
-modId = "javd"
-mandatory = true
-versionRange = "[5.0.0,)"
-ordering = "AFTER"
-side = "BOTH"
