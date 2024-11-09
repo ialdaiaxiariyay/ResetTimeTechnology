@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ialdgtcore:block/void_world_block"
+    }
+  }
+}

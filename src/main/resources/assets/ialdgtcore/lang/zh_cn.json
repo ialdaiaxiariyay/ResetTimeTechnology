@@ -1,0 +1,15 @@
+{
+  "block.ialdgtcore.void_world_block": "虚空世界方块",
+  "block.ialdgtcore.large_shape_world_void_pump": "大型世界虚空泵",
+  "block.ialdgtcore.general_energy_furnace": "通能炉",
+  "block.ialdgtcore.compressed_block_transmutation_chamber": "压缩方块转换室",
+  "block.ialdgtcore.thermomagnetic_cooling_generator": "热磁冷却发电机",
+  "gtceu.large_shape_world_void_pump": "大型世界虚空泵",
+  "gtceu.compressed_block_transmutation_chamber": "压缩方块转换室",
+  "gtceu.thermomagnetic_cooling_generator": "热磁冷却发电机",
+  "block.ialdgtcore.thermomagnetic_cooling_generator.tooltip" : "利用加热生磁物体的方式进行发电",
+  "block.ialdgtcore.general_energy_furnace.tooltip" : "非常强大的熔炉，只需要一个线圈就能工作,并且有int上限的并行",
+  "block.ialdgtcore.compressed_block_transmutation_chamber.tooltip" : "压缩的方块转换室，更加快速的转换方块",
+  "block.ialdgtcore.large_shape_world_void_pump.tooltip" : "从虚空世界中获取无限的流体",
+  "item.ialdgtcore.new_world" : "§d新 世界"
+}
