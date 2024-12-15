@@ -3,25 +3,25 @@ loaderVersion="[47,)"
 license="LGPL v2.1"
 issueTrackerURL=""
 [[mods]]
-modId="ialdgtcore"
+modId="rttgtcore"
 version="1.1"
-displayName="Iald GTCore"
+displayName="RTTGTCore"
 logoFile="icon.png"
 authors="ialdaiaxiariyay"
-description='''IALDGTCORE'''
-[[dependencies.ialdgtcore]]
+description='''Reset Time Technology GTCore'''
+[[dependencies.rttgtcore]]
 modId="forge"
 mandatory=true
 versionRange="[47,)"
 ordering="NONE"
 side="BOTH"
-[[dependencies.ialdgtcore]]
+[[dependencies.rttgtcore]]
 modId="minecraft"
 mandatory=true
 versionRange="[1.20.1,)"
 ordering="NONE"
 side="BOTH"
-[[dependencies.ialdgtcore]]
+[[dependencies.rttgtcore]]
 modId = "gtceu"
 mandatory = true
 versionRange = "[1.0.16,)"
