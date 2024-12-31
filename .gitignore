@@ -116,3 +116,16 @@ run/
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
+!appliedenergistics2-forge-15.2.1.jar
+!constructionwand-1.20.1-2.11.jar
+!embeddium-0.3.30+mc1.20.1.jar
+!ExtendedAE-1.20-1.1.12-forge.jar
+!gtceu-1.20.1-1.4.4.jar
+!gtlcore-1.1.jar
+!gtmthings-1.3.4.jar
+!Jade-1.20.1-forge-11.9.2.jar
+!jecharacters-1.20.1-forge-4.5.11-dev-shadow.jar
+!Re-Avaritia-forged-1.20.1-1.3.8.3.jar
+!rubidium-extra-0.5.4.3+mc1.20.1-build.121.jar
+!TravelAnchors-1.20.1-5.0.1.jar
+!worldedit-mod-7.2.15.jar
