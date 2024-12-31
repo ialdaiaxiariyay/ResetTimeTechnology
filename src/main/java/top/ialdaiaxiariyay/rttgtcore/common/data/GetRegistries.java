@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.registries.ForgeRegistries;
+
 import top.ialdaiaxiariyay.rttgtcore.RTTGTCore;
 
 public class GetRegistries {

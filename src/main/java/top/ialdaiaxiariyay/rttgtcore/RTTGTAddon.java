@@ -1,13 +1,15 @@
 package top.ialdaiaxiariyay.rttgtcore;
 
-import net.minecraft.data.recipes.FinishedRecipe;
-import top.ialdaiaxiariyay.rttgtcore.api.registries.Registries;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.addon.events.MaterialCasingCollectionEvent;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
-import top.ialdaiaxiariyay.rttgtcore.common.blocks.block;
-import top.ialdaiaxiariyay.rttgtcore.common.items.item;
-import top.ialdaiaxiariyay.rttgtcore.data.recipe.AddRecipes;
+
+import net.minecraft.data.recipes.FinishedRecipe;
+
+import top.ialdaiaxiariyay.rttgtcore.api.registries.Registration;
+import top.ialdaiaxiariyay.rttgtcore.common.data.blocks.RTTGTBlocks;
+import top.ialdaiaxiariyay.rttgtcore.common.data.items.RTTGTItem;
+import top.ialdaiaxiariyay.rttgtcore.common.data.recipe.AddRecipes;
 
 import java.util.function.Consumer;
 
@@ -18,17 +20,16 @@ public class RTTGTAddon implements IGTAddon {
 
     @Override
     public GTRegistrate getRegistrate() {
-        return Registries.REGISTRATE;
+        return Registration.REGISTRATE;
     }
 
     @Override
-    public void initializeAddon() {
-    }
+    public void initializeAddon() {}
 
     @Override
     public void registerElements() {
-        item.init();
-        block.init();
+        RTTGTItem.init();
+        RTTGTBlocks.init();
     }
 
     @Override
@@ -42,12 +43,10 @@ public class RTTGTAddon implements IGTAddon {
     }
 
     @Override
-    public void registerSounds() {
-    }
+    public void registerSounds() {}
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
         AddRecipes.init(provider);
     }
-
 }
