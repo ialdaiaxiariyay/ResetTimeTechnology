@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "rtt:block/void_world_block"
+    }
+  }
+}
