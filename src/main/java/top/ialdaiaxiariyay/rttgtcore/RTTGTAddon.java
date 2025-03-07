@@ -7,9 +7,11 @@ import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import top.ialdaiaxiariyay.rttgtcore.api.registries.Registration;
-import top.ialdaiaxiariyay.rttgtcore.common.data.blocks.RTTGTBlocks;
-import top.ialdaiaxiariyay.rttgtcore.common.data.items.RTTGTItem;
-import top.ialdaiaxiariyay.rttgtcore.common.data.recipe.AddRecipes;
+import top.ialdaiaxiariyay.rttgtcore.common.blocks.RTTGTBlocks;
+import top.ialdaiaxiariyay.rttgtcore.common.data.ore.RTTGTOres;
+import top.ialdaiaxiariyay.rttgtcore.common.data.recipe.CustomRecipe;
+import top.ialdaiaxiariyay.rttgtcore.common.items.RTTGTItem;
+import top.ialdaiaxiariyay.rttgtcore.common.materials.RTTGTElements;
 
 import java.util.function.Consumer;
 
@@ -24,12 +26,14 @@ public class RTTGTAddon implements IGTAddon {
     }
 
     @Override
-    public void initializeAddon() {}
+    public void initializeAddon() {
+        RTTGTItem.init();
+        RTTGTBlocks.init();
+    }
 
     @Override
     public void registerElements() {
-        RTTGTItem.init();
-        RTTGTBlocks.init();
+        RTTGTElements.init();
     }
 
     @Override
@@ -46,7 +50,12 @@ public class RTTGTAddon implements IGTAddon {
     public void registerSounds() {}
 
     @Override
+    public void registerOreVeins() {
+        RTTGTOres.init();
+    }
+
+    @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-        AddRecipes.init(provider);
+        CustomRecipe.init(provider);
     }
 }

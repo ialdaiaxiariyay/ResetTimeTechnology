@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "AAA",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "gtceu:certus_quartz_gem"
+    }
+  },
+  "result": {
+    "count": 5,
+    "item": "ae2:certus_quartz_crystal"
+  }
+}

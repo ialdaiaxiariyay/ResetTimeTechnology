@@ -1,0 +1,16 @@
+loom {
+    silentMojangMappingsLicense()
+    forge {
+        mixinConfigs = [
+                "rttgtcore.mixins.json"
+        ]
+
+        dataGen {
+            mod(mod_id)
+        }
+    }
+
+    runConfigs.named("data").configure {
+        programArg("--existing=" + file("src/main/resources").absolutePath)
+    }
+}

@@ -1,0 +1,60 @@
+repositories {
+    mavenLocal()
+    flatDir {
+        dir 'libs'
+    }
+    mavenCentral()
+    maven {
+        name 'FirstDarkDev'
+        url "https://maven.firstdarkdev.xyz/snapshots/"
+    }
+    maven {
+        name 'Quilt'
+        url 'https://maven.quiltmc.org/repository/release/'
+    }
+    maven {
+        name = 'ParchmentMC'
+        url = 'https://maven.parchmentmc.org'
+    }
+    maven {
+        url "https://maven.saps.dev/releases/"
+        content {
+            includeGroup "dev.latvian.mods"
+            includeGroup "dev.ftb.mods"
+        }
+    }
+    maven { // Registrate
+        url = "https://maven.tterrag.com/"
+        content {
+            // need to be specific here due to version overlaps
+            includeGroup("com.jozufozu.flywheel")
+            includeGroup("com.tterrag.registrate")
+            includeGroup("com.simibubi.create")
+        }
+    }
+    maven {
+        // Patchouli, JEI
+        name = "BlameJared"
+        url = "https://maven.blamejared.com/"
+    }
+    maven {
+        url = "https://maven.theillusivec4.top/"
+    }
+    maven {
+        // Curse Forge File
+        url "https://cursemaven.com/"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    maven {
+        url "https://maven.architectury.dev/"
+    }
+    maven { // ModernUI
+        name 'IzzelAliz Maven'
+        url 'https://maven.izzel.io/releases/'
+    }
+    maven { // Ad Astra
+        url "https://maven.teamresourceful.com/repository/maven-public/"
+    }
+}

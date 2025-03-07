@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "ACA",
+    "ABA"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:cobblestone"
+    },
+    "B": {
+      "item": "minecraft:stone"
+    },
+    "C": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "result": {
+    "item": "rttgtcore:prospector_ulv"
+  }
+}

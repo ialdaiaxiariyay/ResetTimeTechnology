@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "rttgtcore:item/advanced_data_module"
+  }
+}
