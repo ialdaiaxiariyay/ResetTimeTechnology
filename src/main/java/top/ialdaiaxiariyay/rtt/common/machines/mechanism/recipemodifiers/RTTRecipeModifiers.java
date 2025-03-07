@@ -1,4 +1,4 @@
-package top.ialdaiaxiariyay.rtt.common.machines.mechanism;
+package top.ialdaiaxiariyay.rtt.common.machines.mechanism.recipemodifiers;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IRecipeCapabilityHolder;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;

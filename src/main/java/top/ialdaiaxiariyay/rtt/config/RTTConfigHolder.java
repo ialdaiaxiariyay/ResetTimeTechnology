@@ -22,6 +22,6 @@ public class RTTConfigHolder {
     }
 
     @Configurable
-    @Configurable.Comment("开启原版gtmt无线电网行为")
-    public boolean EnableOriginalGTMTUnlimitedPowerGrids = false;
+    @Configurable.Comment("test")
+    public boolean EnableTest = false;
 }

@@ -1,0 +1,22 @@
+processResources {
+    // set up properties for filling into metadata
+    var properties = [
+            "mod_license"      : mod_license,
+            "mod_id"           : mod_id,
+            "version"          : version,
+            "mod_name"         : mod_name,
+            "mod_url"          : mod_url,
+            "mod_author"       : mod_author,
+            "forge_version"    : forge_version.split("\\.")[0], // only specify major version of forge
+            "minecraft_version": minecraft_version,
+            "gtceu_version"    : gtceu_version,
+            "kubejs_version"   : kubejs_version,
+            "jei_version"      : jei_version,
+            "gtocore_version"  : gtocore_version,
+    ]
+    inputs.properties(properties)
+
+    filesMatching("META-INF/mods.toml") {
+        expand properties
+    }
+}

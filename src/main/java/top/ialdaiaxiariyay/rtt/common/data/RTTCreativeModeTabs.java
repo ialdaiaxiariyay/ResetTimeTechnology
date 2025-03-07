@@ -2,6 +2,7 @@ package top.ialdaiaxiariyay.rtt.common.data;
 
 import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.common.items.RTTItem;
+import top.ialdaiaxiariyay.rtt.common.machines.machines.RTTFunctionalChamber;
 import top.ialdaiaxiariyay.rtt.common.machines.machines.RTTMachines;
 
 import net.minecraft.world.item.CreativeModeTab;
@@ -29,6 +30,13 @@ public class RTTCreativeModeTabs {
             builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("machines_item", REGISTRATE))
                     .icon(RTTMachines.DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE_MK1::asStack)
                     .title(REGISTRATE.addLang("itemGroup", RTT.id("machines_item"), RTT.NAME + "Machines Items"))
+                    .build())
+            .register();
+
+    public static RegistryEntry<CreativeModeTab> FUNCTIONAL_CHAMBER_ITEM = REGISTRATE.defaultCreativeTab("functional_chamber_item",
+            builder -> builder.displayItems(new RegistrateDisplayItemsGenerator("functional_chamber_item", REGISTRATE))
+                    .icon(RTTFunctionalChamber.WIRELESS_ENERGY_INTERFACE::asStack)
+                    .title(REGISTRATE.addLang("itemGroup", RTT.id("functional_chamber_item"), RTT.NAME + "Functional Chamber Items"))
                     .build())
             .register();
 

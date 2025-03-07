@@ -1,6 +1,6 @@
 package top.ialdaiaxiariyay.rtt.api.registries;
 
-import top.ialdaiaxiariyay.rtt.common.machines.mechanism.RTTRecipeModifiers;
+import top.ialdaiaxiariyay.rtt.common.machines.mechanism.recipemodifiers.RTTRecipeModifiers;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.block.IMachineBlock;

@@ -17,7 +17,9 @@ import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
 
 public class RTTMachines {
 
-    public static void init() {}
+    public static void init() {
+        RTTFunctionalChamber.init();
+    }
 
     static {
         RTTRegistration.REGISTRATE.creativeModeTab(() -> RTTCreativeModeTabs.MACHINES_ITEM);

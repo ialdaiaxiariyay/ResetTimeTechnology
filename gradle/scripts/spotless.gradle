@@ -1,0 +1,16 @@
+spotless {
+    encoding 'UTF-8'
+
+    java {
+        target 'src/main/java/**/*.java', 'src/test/java/**/*.java'
+
+        def orderFile = file("$rootDir/spotless/spotless.importorder")
+        def formatFile = file("$rootDir/spotless/spotless.eclipseformat.xml")
+
+        toggleOffOn()
+        importOrderFile(orderFile)
+        removeUnusedImports('cleanthat-javaparser-unnecessaryimport')
+        endWithNewline()
+        eclipse('4.31').configFile(formatFile)
+    }
+}
