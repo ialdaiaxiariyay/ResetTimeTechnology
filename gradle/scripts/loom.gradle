@@ -2,7 +2,7 @@ loom {
     silentMojangMappingsLicense()
     forge {
         mixinConfigs = [
-                "rttgtcore.mixin.json"
+                "rtt.mixins.json"
         ]
 
         dataGen {

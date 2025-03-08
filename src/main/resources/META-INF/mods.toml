@@ -8,7 +8,7 @@ version = "${version}"
 displayName = "${mod_name}"
 displayURL = "${mod_url}"
 authors="${mod_author}"
-description = "Reset Time Technology GregTech Core mod"
+description = "Reset Time Technology"
 
 [[dependencies.${mod_id}]]
 modId = "forge"
