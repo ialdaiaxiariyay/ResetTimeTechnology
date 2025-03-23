@@ -16,8 +16,8 @@ dependencies {
     modImplementation("com.lowdragmc.ldlib:ldlib-forge-$project.minecraft_version:$project.ldlib_version") { transitive = false }
     modImplementation("com.tterrag.registrate:Registrate:$project.registrate_version")
     modImplementation("dev.latvian.mods:kubejs-forge:$project.kubejs_version")
-    modImplementation("org.gtlcore.gtlcore:gtlcore-1.1")
-
+    modImplementation("org.gtlcore.gtlcore:gtlcore-1.1.1-build_8")
+    modImplementation("com.gtladd.gtladditions:gtladditions-1.0.4_bulid_2")
     modImplementation("maven.modrinth:jade-1.20.1-forge-$project.jade_version")
 
     // Mixin Extras

@@ -19,14 +19,4 @@ public class RTTConfigHolder {
             }
         }
     }
-
-    @Configurable
-    @Configurable.Comment("开启湛紫微光和微光主机合成表的注册，注意这可能会破坏游戏平衡性")
-    public boolean EnableDeepvioletgleamAndCircuitRecipe = false;
-    @Configurable
-    @Configurable.Comment("开启通用蒸汽机，这可能会有点小OP")
-    public boolean EnableTheGeneralSteamEngine = false;
-    @Configurable
-    @Configurable.Comment("开启方便AE配方，比较OP")
-    public boolean EnableFreeAe = false;
 }

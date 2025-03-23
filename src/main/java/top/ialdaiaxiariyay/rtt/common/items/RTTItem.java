@@ -1,78 +1,33 @@
 package top.ialdaiaxiariyay.rtt.common.items;
 
-import com.gregtechceu.gtceu.api.GTValues;
-import com.gregtechceu.gtceu.api.gui.misc.ProspectorMode;
 import com.gregtechceu.gtceu.api.item.ComponentItem;
-import com.gregtechceu.gtceu.api.item.component.ElectricStats;
-import com.gregtechceu.gtceu.api.item.component.IItemComponent;
 import com.gregtechceu.gtceu.common.data.GTCompassSections;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.item.DataItemBehavior;
-import com.gregtechceu.gtceu.common.item.ProspectorScannerBehavior;
 import com.gregtechceu.gtceu.common.item.TooltipBehavior;
-import com.gregtechceu.gtceu.config.ConfigHolder;
-
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
-
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullBiConsumer;
 import top.ialdaiaxiariyay.rtt.common.data.RTTCreativeModeTabs;
+import top.ialdaiaxiariyay.rtt.common.items.record.RTTRecord;
 import top.ialdaiaxiariyay.rtt.common.items.structurewrite.StructureWriteBehavior;
-
 import static com.gregtechceu.gtceu.common.data.GTItems.*;
 import static top.ialdaiaxiariyay.rtt.api.registries.RTTRegistration.*;
 
 public class RTTItem {
 
     static {
-        REGISTRATE.creativeModeTab(() -> RTTCreativeModeTabs.RTTGT_ITEM);
+        REGISTRATE.creativeModeTab(() -> RTTCreativeModeTabs.RTT_ITEM);
     }
-
-    public static final ItemEntry<Item> GLIMMER_LV_PROCESSOR_MAINFRAME = REGISTRATE.item("glimmer_lv_processor_mainframe", Item::new)
-            .register();
-
-    public static final ItemEntry<Item> GLIMMER_MV_PROCESSOR_MAINFRAME = REGISTRATE.item("glimmer_mv_processor_mainframe", Item::new)
-            .register();
-
-    public static final ItemEntry<Item> GLIMMER_HV_PROCESSOR_MAINFRAME = REGISTRATE.item("glimmer_hv_processor_mainframe", Item::new)
-            .register();
-
-    public static final ItemEntry<Item> GLIMMER_EV_PROCESSOR_MAINFRAME = REGISTRATE.item("glimmer_ev_processor_mainframe", Item::new)
-            .register();
-
-    public static final ItemEntry<Item> GLIMMER_IV_PROCESSOR_MAINFRAME = REGISTRATE.item("glimmer_iv_processor_mainframe", Item::new)
-            .register();
-
-    public static final ItemEntry<Item> GLIMMER_LuV_PROCESSOR_MAINFRAME = REGISTRATE.item("glimmer_luv_processor_mainframe", Item::new)
-            .register();
-
-    public static final ItemEntry<Item> GLIMMER_ZPM_PROCESSOR_MAINFRAME = REGISTRATE.item("glimmer_zpm_processor_mainframe", Item::new)
-            .register();
-
-    public static final ItemEntry<Item> GLIMMER_UV_PROCESSOR_MAINFRAME = REGISTRATE.item("glimmer_uv_processor_mainframe", Item::new)
-            .register();
-
-    public static final ItemEntry<Item> GLIMMER_UHV_PROCESSOR_MAINFRAME = REGISTRATE.item("glimmer_uhv_processor_mainframe", Item::new)
-            .register();
-
-    public static final ItemEntry<Item> GLIMMER_UEV_PROCESSOR_MAINFRAME = REGISTRATE.item("glimmer_uev_processor_mainframe", Item::new)
-            .register();
-
-    public static final ItemEntry<Item> GLIMMER_UIV_PROCESSOR_MAINFRAME = REGISTRATE.item("glimmer_uiv_processor_mainframe", Item::new)
-            .register();
-
-    public static final ItemEntry<Item> GLIMMER_UXV_PROCESSOR_MAINFRAME = REGISTRATE.item("glimmer_uxv_processor_mainframe", Item::new)
-            .register();
-
-    public static final ItemEntry<Item> GLIMMER_OpV_PROCESSOR_MAINFRAME = REGISTRATE.item("glimmer_opv_processor_mainframe", Item::new)
-            .register();
-
-    public static final ItemEntry<Item> GLIMMER_MAX_PROCESSOR_MAINFRAME = REGISTRATE.item("glimmer_max_processor_mainframe", Item::new)
-            .register();
 
     public static final ItemEntry<Item> NEW_WORLD = REGISTRATE.item("new_world", Item::new)
             .lang("New World")
+            .register();
+
+    public static final ItemEntry<ComponentItem> NEWa_WORLD = REGISTRATE.item("newa_world", ComponentItem::create)
+            .lang("New World")
+            .onRegister(GTItems.attach(RTTRecord.StarTrip.PLAY_SOUND_INTERACTION))
             .register();
 
     public static final ItemEntry<ComponentItem> DEBUG_STRUCTURE_WRITER = REGISTRATE
@@ -85,20 +40,12 @@ public class RTTItem {
             .model(NonNullBiConsumer.noop())
             .register();
 
-    public static ItemEntry<ComponentItem> PROSPECTOR_ULV = REGISTRATE.item("prospector_ulv", ComponentItem::create)
-            .lang("Super Prospector (ulv)")
-            .properties(p -> p.stacksTo(1))
-            .onRegister(attach(ElectricStats.createElectricItem(1_000_000_000_000L, GTValues.LuV),
-                    new ProspectorScannerBehavior(8, GTValues.V[GTValues.LuV] / 32L, ProspectorMode.ORE,
-                            ProspectorMode.FLUID,
-                            ConfigHolder.INSTANCE.machines.doBedrockOres ? ProspectorMode.BEDROCK_ORE : null)))
-            .register();
-
     public static final ItemEntry<ComponentItem> ADVANCED_DATA_MODULE = REGISTRATE
             .item("advanced_data_module", ComponentItem::create)
-            .onRegister(attach((IItemComponent) (new DataItemBehavior(true))))
+            .onRegister(attach(new DataItemBehavior(true)))
             .onRegister(compassNode(GTCompassSections.COMPONENTS))
             .register();
 
-    public static void init() {}
+    public static void init() {
+    }
 }

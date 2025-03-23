@@ -8,8 +8,6 @@ import net.minecraft.data.recipes.FinishedRecipe;
 
 import top.ialdaiaxiariyay.rtt.api.registries.RTTRegistration;
 import top.ialdaiaxiariyay.rtt.common.blocks.RTTBlocks;
-import top.ialdaiaxiariyay.rtt.common.data.ore.RTTOres;
-import top.ialdaiaxiariyay.rtt.common.data.recipe.CustomRecipe;
 import top.ialdaiaxiariyay.rtt.common.items.RTTItem;
 import top.ialdaiaxiariyay.rtt.common.materials.RTTElements;
 
@@ -51,11 +49,10 @@ public class RTTAddon implements IGTAddon {
 
     @Override
     public void registerOreVeins() {
-        RTTOres.init();
+
     }
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-        CustomRecipe.init(provider);
     }
 }

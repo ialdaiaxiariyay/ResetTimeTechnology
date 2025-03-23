@@ -30,7 +30,8 @@ public class RTTBlocks {
                 () -> RenderType::cutoutMipped);
     }
 
-    @SuppressWarnings("all")
+
+    @SuppressWarnings("removal")
     public static BlockEntry<Block> createCasingBlock(String name,
                                                       NonNullFunction<BlockBehaviour.Properties, Block> blockSupplier,
                                                       ResourceLocation texture,

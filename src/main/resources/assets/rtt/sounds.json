@@ -1,0 +1,56 @@
+{
+  "hoshi_no_umi": {
+    "subtitle": "subtitles.hoshi_no_umi",
+    "sounds": [
+      {
+        "name": "rtt:hoshi_no_umi",
+        "stream": true
+      }
+    ]
+  },
+  "a_place_in_the_sunshine": {
+    "subtitle": "subtitles.a_place_in_the_sunshine",
+    "sounds": [
+      {
+        "name": "rtt:a_place_in_the_sunshine",
+        "stream": true
+      }
+    ]
+  },
+  "star_trip": {
+    "subtitle": "subtitles.startrip",
+    "sounds": [
+      {
+        "name": "rtt:star_trip",
+        "stream": true
+      }
+    ]
+  },
+  "yi_lirile": {
+    "subtitle": "subtitles.yi_lirile",
+    "sounds": [
+      {
+        "name": "rtt:yi_lirile",
+        "stream": false
+      }
+    ]
+  },
+  "harmstimuli": {
+    "subtitle": "subtitles.harmstimuli",
+    "sounds": [
+      {
+        "name": "rtt:harm_stimuli",
+        "stream": true
+      }
+    ]
+  },
+  "harmonious": {
+    "subtitle": "subtitles.harmonious",
+    "sounds": [
+      {
+        "name": "rtt:harmonious",
+        "stream": true
+      }
+    ]
+  }
+}
