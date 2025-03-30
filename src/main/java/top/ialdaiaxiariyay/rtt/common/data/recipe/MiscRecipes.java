@@ -34,20 +34,6 @@ public class MiscRecipes {
                 .EUt(GTValues.V[GTValues.MAX])
                 .save(provider);
 
-        new RTTRecipeBuilder(RTT.id("test"), ASSEMBLER_RECIPES)
-                .RPt(1)
-                .inputItems(Blocks.IRON_BLOCK.asItem())
-                .outputItems(Blocks.BLUE_ICE.asItem())
-                .duration(2000)
-                .save(provider);
-
-        new RTTRecipeBuilder(RTT.id("test2"), GTLRecipeTypes.ANNIHILATE_GENERATOR_RECIPES)
-                .RPt(GTValues.VEX[GTValues.MAX] * 4194000)
-                .inputItems(Blocks.IRON_BLOCK.asItem())
-                .outputItems(Blocks.BLUE_ICE.asItem())
-                .duration(2000)
-                .save(provider);
-
         ASSEMBLER_RECIPES.recipeBuilder(RTT.id("figure_factory"))
                 .inputItems(Registries.getItem("gtceu:door_of_create"), 64)
                 .inputItems(Registries.getItem("gtceu:create_aggregation"), 64)
