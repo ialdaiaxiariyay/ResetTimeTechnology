@@ -6,6 +6,7 @@ import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 
+import top.ialdaiaxiariyay.rtt.api.recipe.RTTRecipeCapabilities;
 import top.ialdaiaxiariyay.rtt.api.registries.RTTRegistration;
 import top.ialdaiaxiariyay.rtt.common.blocks.RTTBlocks;
 import top.ialdaiaxiariyay.rtt.common.items.RTTItem;
@@ -48,11 +49,13 @@ public class RTTAddon implements IGTAddon {
     public void registerSounds() {}
 
     @Override
-    public void registerOreVeins() {
+    public void registerOreVeins() {}
 
+    @Override
+    public void registerRecipeCapabilities() {
+        RTTRecipeCapabilities.init();
     }
 
     @Override
-    public void addRecipes(Consumer<FinishedRecipe> provider) {
-    }
+    public void addRecipes(Consumer<FinishedRecipe> provider) {}
 }

@@ -1,18 +1,25 @@
 {
   "config.screen.rtt": "开启功能后请退出游戏重进入",
   "config.screen.gtlcore": "开启功能后请退出游戏重进入",
-  "config.rtt.option.EnableDeepvioletgleamAndCircuitRecipe": "开启湛紫微光和微光主机的注册",
-  "config.rtt.option.EnableTheGeneralSteamEngine": "开启通用蒸汽机",
-  "config.rtt.option.EnableFreeAe": "开启方便AE配方，比较OP",
-  "config.rtt.option.EnableTips": "关闭进入存档信息提示",
+
   "rtt.registry.add": "由Reset Time Technology添加",
+
   "itemGroup.rtt.machines_item": "重置时间科技 机器",
   "itemGroup.rtt.blocks_item": "重置时间科技 方块",
   "itemGroup.rtt.rtt_item": "重置时间科技 物品",
+
   "block.rtt.void_world_block": "虚空世界方块",
   "block.rtt.figure_factory": "手办工厂",
   "block.rtt.rhythm_source_monitor": "韵律源点监视器",
   "block.rtt.rhythm_source_interface": "韵律源点接口",
+  "block.rtt.rhythm_source_input_laser": "输入型韵律源点接口(激光仓)",
+  "block.rtt.rhythm_source_output_laser": "输出型韵律源点接口(激光仓)",
+  "block.rtt.rhythm_source_input_energy": "输入型韵律源点接口(能源仓)",
+  "block.rtt.rhythm_source_output_energy": "输出型韵律源点接口(能源仓)",
+
+  "block.rtt.rhythm_source.tooltip": "无线韵律源点接口",
+  "block.rtt.rhythm_source.input.tooltip": "模式：从全局网络提取RP",
+  "block.rtt.rhythm_source.output.tooltip": "模式：向全局网络注入RP",
   "block.rtt.figure_factory.tooltip.1" : "泛银河系格雷公司通用工厂的微型版",
   "block.rtt.figure_factory.tooltip.2" : "支持泛银河系格雷公司推出的玩偶",
   "block.rtt.figure_factory.tooltip.3" : "只能使用ME输入和ME输出",
@@ -21,9 +28,13 @@
   "block.rtt.rhythm_source_monitor.tooltip": "监控韵律源点的总量和使用量",
   "block.rtt.rhythm_source_interface.tooltip": "接收能量并发送至韵律源点网络",
   "block.rtt.rhythm_source_interface.tooltip.0": "转换比为8EU:1RP 转换，不满足8:1输入为1RP，并存储不满足的EU用于下一次计算",
+
+  "gtceu.figure_factory": "手办工厂",
+
   "item.rtt.new_world" : "§d新世界",
   "item.rtt.advanced_data_module" : "高级数据模块",
   "item.rtt.debug_structure_writer" : "结构导出工具",
+
   "rtt.machine.rhythm_source_monitor.tooltip.statistics": "使用的韵律源点统计：",
   "rtt.machine.rhythm_source_monitor.tooltip.all": "全局",
   "rtt.machine.rhythm_source_monitor.tooltip.team": "团队",
@@ -31,5 +42,12 @@
   "rtt.machine.rhythm_source_monitor.tooltip.avg_usage": "平均速率: %s RP/s",
   "rtt.machine.rhythm_source_monitor.tooltip.position": "位置: %s\n所属: %s",
   "rtt.recipe.rp_per_tick": "RP/t: %s",
-  "rtt.recipe.total_rp": "总RP: %s"
+  "rtt.recipe.total_rp": "总RP: %s",
+  "rtt.machine.rp_hatch.bound": "已绑定至RP网络：%s",
+  "rtt.machine.rp_hatch.unbound": "RP网络连接已断开",
+  "rtt.machine.rp_hatch.status.full": "RP存储已满",
+  "rtt.machine.rp_hatch.status.empty": "RP存储为空",
+  "rtt.machine.rp_input": "RP输入：%d",
+  "rtt.machine.rp_output": "RP输出：%d",
+  "rtt.machine.rp_stored": "功率：%d"
 }

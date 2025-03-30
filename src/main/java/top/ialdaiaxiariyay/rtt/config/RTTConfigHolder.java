@@ -2,7 +2,6 @@ package top.ialdaiaxiariyay.rtt.config;
 
 import dev.toma.configuration.Configuration;
 import dev.toma.configuration.config.Config;
-import dev.toma.configuration.config.Configurable;
 import dev.toma.configuration.config.format.ConfigFormats;
 import top.ialdaiaxiariyay.rtt.RTT;
 

@@ -1,6 +1,5 @@
 package top.ialdaiaxiariyay.rtt.common.data.recipe;
 
-import net.minecraft.world.level.block.Blocks;
 import org.gtlcore.gtlcore.common.data.*;
 import org.gtlcore.gtlcore.common.data.machines.AdvancedMultiBlockMachine;
 import org.gtlcore.gtlcore.utils.Registries;
@@ -9,6 +8,7 @@ import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.world.level.block.Blocks;
 
 import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.api.registries.RTTRecipeBuilder;
@@ -23,7 +23,6 @@ import static top.ialdaiaxiariyay.rtt.common.machines.recipes.RTTRecipeTypes.*;
 public class MiscRecipes {
 
     public static void init(Consumer<FinishedRecipe> provider) {
-
         ASSEMBLER_RECIPES.recipeBuilder(RTT.id("advanced_data_module"))
                 .inputItems(Registries.getItem("gtceu:data_module"), 4)
                 .inputItems(Registries.getItem("kubejs:supracausal_printed_circuit_board"), 2)
@@ -36,12 +35,18 @@ public class MiscRecipes {
                 .save(provider);
 
         new RTTRecipeBuilder(RTT.id("test"), ASSEMBLER_RECIPES)
-                .inputRP(1)
+                .RPt(1)
                 .inputItems(Blocks.IRON_BLOCK.asItem())
                 .outputItems(Blocks.BLUE_ICE.asItem())
                 .duration(2000)
                 .save(provider);
 
+        new RTTRecipeBuilder(RTT.id("test2"), GTLRecipeTypes.ANNIHILATE_GENERATOR_RECIPES)
+                .RPt(GTValues.VEX[GTValues.MAX] * 4194000)
+                .inputItems(Blocks.IRON_BLOCK.asItem())
+                .outputItems(Blocks.BLUE_ICE.asItem())
+                .duration(2000)
+                .save(provider);
 
         ASSEMBLER_RECIPES.recipeBuilder(RTT.id("figure_factory"))
                 .inputItems(Registries.getItem("gtceu:door_of_create"), 64)
@@ -76,7 +81,7 @@ public class MiscRecipes {
                 .inputItems(AdvancedMultiBlockMachine.CREATE_COMPUTATION, 64)
                 .inputItems(AdvancedMultiBlockMachine.CREATE_AGGREGATION, 64)
                 .inputItems(GTLItems.SENSOR_MAX, 64)
-                .inputItems(Registries.getItem("singularity"),4)
+                .inputItems(Registries.getItem("avaritia:singularity"), 4)
                 .inputFluids(GTLMaterials.Shirabon.getFluid(9732096))
                 .inputFluids(GTLMaterials.Eternity.getFluid(110592))
                 .inputFluids(GTLMaterials.TranscendentMetal.getFluid(18432))

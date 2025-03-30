@@ -1,6 +1,7 @@
 package top.ialdaiaxiariyay.rtt.api.rhythmsource;
 
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
+
 import com.hepdd.gtmthings.utils.TeamUtil;
 import com.mojang.datafixers.util.Pair;
 
@@ -8,15 +9,20 @@ import java.math.BigInteger;
 import java.util.UUID;
 import java.util.WeakHashMap;
 
+import static top.ialdaiaxiariyay.rtt.api.rhythmsource.GlobalVariableStorage.GlobalRhythmSource;
+
 public class RhythmSourceManager {
+
     // 存储玩家与机器关联的临时韵律源点数据（WeakHashMap 自动清理无引用对象）
     public static WeakHashMap<Pair<UUID, MetaMachine>, Long> MachineData = new WeakHashMap<>();
 
     // 初始化方法（空构造器）
     public RhythmSourceManager() {}
 
-    // 确保团队存在初始韵律源点记录
     public static void strongCheckOrAddUser(UUID user_uuid) {
+        if (user_uuid == null) {
+            return; // 禁止传入null
+        }
         if (!GlobalVariableStorage.GlobalRhythmSource.containsKey(user_uuid)) {
             GlobalVariableStorage.GlobalRhythmSource.put(user_uuid, BigInteger.ZERO);
         }
@@ -34,15 +40,15 @@ public class RhythmSourceManager {
         UUID teamUUID = TeamUtil.getTeamUUID(user_uuid);
         MachineData.put(Pair.of(user_uuid, machine), RP.longValue()); // 记录机器临时数据
 
-        BigInteger totalRP = GlobalVariableStorage.GlobalRhythmSource.getOrDefault(teamUUID, BigInteger.ZERO);
+        BigInteger totalRP = GlobalRhythmSource.getOrDefault(teamUUID, BigInteger.ZERO);
         if (totalRP.signum() < 0) { // 防止负数
             totalRP = BigInteger.ZERO;
-            GlobalVariableStorage.GlobalRhythmSource.put(teamUUID, totalRP);
+            GlobalRhythmSource.put(teamUUID, totalRP);
         }
 
         totalRP = totalRP.add(RP);
         if (totalRP.signum() >= 0) { // 韵律源点不允许为负
-            GlobalVariableStorage.GlobalRhythmSource.put(teamUUID, totalRP);
+            GlobalRhythmSource.put(teamUUID, totalRP);
             return true;
         } else {
             return false;
@@ -62,11 +68,11 @@ public class RhythmSourceManager {
     // 获取团队的当前韵律源点总量
     public static BigInteger getTeamRP(UUID user_uuid) {
         UUID teamUUID = TeamUtil.getTeamUUID(user_uuid);
-        BigInteger totalRP = GlobalVariableStorage.GlobalRhythmSource.getOrDefault(teamUUID, BigInteger.ZERO);
+        BigInteger totalRP = GlobalRhythmSource.getOrDefault(teamUUID, BigInteger.ZERO);
         if (totalRP.signum() < 0) { // 自动修复负数
             RhythmSourceSavedData.INSTANCE.setDirty(true);
             totalRP = BigInteger.ZERO;
-            GlobalVariableStorage.GlobalRhythmSource.put(teamUUID, totalRP);
+            GlobalRhythmSource.put(teamUUID, totalRP);
         }
         return totalRP;
     }
@@ -79,12 +85,24 @@ public class RhythmSourceManager {
             System.err.println("无法标记韵律源点数据为脏状态（设置操作）");
             e.printStackTrace();
         }
-        GlobalVariableStorage.GlobalRhythmSource.put(TeamUtil.getTeamUUID(user_uuid), RP);
+        GlobalRhythmSource.put(TeamUtil.getTeamUUID(user_uuid), RP);
     }
 
     // 清空全局韵律源点数据（调试或重置用）
     public static void clearGlobalSourceMaps() {
-        GlobalVariableStorage.GlobalRhythmSource.clear();
+        GlobalRhythmSource.clear();
     }
 
+    public static synchronized boolean consumeRP(UUID network, long amount) {
+        BigInteger current = GlobalRhythmSource.getOrDefault(network, BigInteger.ZERO);
+        if (current.compareTo(BigInteger.valueOf(amount)) < 0) return false;
+        GlobalRhythmSource.put(network, current.subtract(BigInteger.valueOf(amount)));
+        return true;
+    }
+
+    public static synchronized boolean addRP(UUID network, long amount) {
+        BigInteger current = GlobalRhythmSource.getOrDefault(network, BigInteger.ZERO);
+        GlobalRhythmSource.put(network, current.add(BigInteger.valueOf(amount)));
+        return true;
+    }
 }

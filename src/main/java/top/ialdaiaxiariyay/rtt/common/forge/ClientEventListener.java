@@ -1,6 +1,5 @@
 package top.ialdaiaxiariyay.rtt.common.forge;
 
-import com.hepdd.gtmthings.data.WirelessEnergySavaedData;
 import com.lowdragmc.lowdraglib.client.utils.RenderBufferUtils;
 
 import net.minecraft.client.Camera;
@@ -29,7 +28,6 @@ import com.mojang.blaze3d.vertex.*;
 import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.api.rhythmsource.RhythmSourceSavedData;
 import top.ialdaiaxiariyay.rtt.common.items.structurewrite.StructureWriteBehavior;
-import top.ialdaiaxiariyay.rtt.config.RTTConfigHolder;
 
 @Mod.EventBusSubscriber(modid = RTT.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 @OnlyIn(Dist.CLIENT)
@@ -111,10 +109,11 @@ public class ClientEventListener {
         }
     }
 
+    public static int Devmode = 1;
+
     @SubscribeEvent
     public static void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent event) {
-        int devmode = 1;
-        if (devmode == 1) {
+        if (Devmode == 1) {
             Player player = event.getEntity();
             if (!player.level().isClientSide()) {
                 player.sendSystemMessage(Component.literal("提示：这是rtt的开发测试版"));
@@ -128,6 +127,5 @@ public class ClientEventListener {
         if (var2 instanceof ServerLevel serverLevel) {
             RhythmSourceSavedData.INSTANCE = RhythmSourceSavedData.getOrCreate(serverLevel);
         }
-
     }
 }

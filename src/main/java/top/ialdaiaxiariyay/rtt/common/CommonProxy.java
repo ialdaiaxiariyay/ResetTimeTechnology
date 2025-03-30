@@ -8,11 +8,14 @@ import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import top.ialdaiaxiariyay.rtt.RTT;
+import top.ialdaiaxiariyay.rtt.api.machine.RTTCapability;
 import top.ialdaiaxiariyay.rtt.common.data.RTTCreativeModeTabs;
 import top.ialdaiaxiariyay.rtt.common.machines.machines.RTTMachines;
 import top.ialdaiaxiariyay.rtt.common.machines.recipes.RTTRecipeTypes;
@@ -58,5 +61,10 @@ public class CommonProxy {
 
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
         RTTMachines.init();
+    }
+
+    @SubscribeEvent
+    public void registerCapabilities(RegisterCapabilitiesEvent event) {
+        RTTCapability.register(event);
     }
 }

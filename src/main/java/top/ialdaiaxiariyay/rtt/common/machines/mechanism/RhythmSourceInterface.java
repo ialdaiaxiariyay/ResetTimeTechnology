@@ -10,12 +10,10 @@ import com.gregtechceu.gtceu.api.machine.feature.IMachineLife;
 import com.gregtechceu.gtceu.api.machine.multiblock.part.TieredIOPartMachine;
 import com.gregtechceu.gtceu.api.machine.trait.NotifiableEnergyContainer;
 import com.gregtechceu.gtceu.common.data.GTItems;
-import com.hepdd.gtmthings.api.capability.IBindable;
-import com.hepdd.gtmthings.utils.TeamUtil;
+
 import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
-import java.util.UUID;
-import javax.annotation.ParametersAreNonnullByDefault;
+
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -28,12 +26,21 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+
+import com.hepdd.gtmthings.api.capability.IBindable;
+import com.hepdd.gtmthings.utils.TeamUtil;
 import org.jetbrains.annotations.Nullable;
 import top.ialdaiaxiariyay.rtt.api.rhythmsource.RhythmSourceManager;
+
+import java.util.Objects;
+import java.util.UUID;
+
+import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class RhythmSourceInterface extends TieredIOPartMachine implements IBindable, IInteractedMachine, IMachineLife {
+
     protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER;
     private TickableSubscription updEnergySubs;
     @Persisted
@@ -51,12 +58,8 @@ public class RhythmSourceInterface extends TieredIOPartMachine implements IBinda
 
     protected NotifiableEnergyContainer createEnergyContainer() {
         NotifiableEnergyContainer container = NotifiableEnergyContainer.receiverContainer(this, Long.MAX_VALUE, GTValues.V[this.tier], 67108864L);
-        container.setSideInputCondition((s) -> {
-            return s == this.getFrontFacing() && this.isWorkingEnabled();
-        });
-        container.setCapabilityValidator((s) -> {
-            return s == null || s == this.getFrontFacing();
-        });
+        container.setSideInputCondition((s) -> s == this.getFrontFacing() && this.isWorkingEnabled());
+        container.setCapabilityValidator((s) -> s == null || s == this.getFrontFacing());
         return container;
     }
 
@@ -71,7 +74,6 @@ public class RhythmSourceInterface extends TieredIOPartMachine implements IBinda
             this.updEnergySubs.unsubscribe();
             this.updEnergySubs = null;
         }
-
     }
 
     private void updateEnergySubscription() {
@@ -81,7 +83,6 @@ public class RhythmSourceInterface extends TieredIOPartMachine implements IBinda
             this.updEnergySubs.unsubscribe();
             this.updEnergySubs = null;
         }
-
     }
 
     private void updateEnergy() {
@@ -110,8 +111,8 @@ public class RhythmSourceInterface extends TieredIOPartMachine implements IBinda
             return InteractionResult.PASS;
         } else if (is.is(GTItems.TOOL_DATA_STICK.asItem())) {
             this.owner_uuid = player.getUUID();
-            if (this.getLevel().isClientSide()) {
-                player.sendSystemMessage(Component.translatable("gtmthings.machine.wireless_energy_hatch.tooltip.bind", new Object[]{TeamUtil.GetName(player)}));
+            if (Objects.requireNonNull(this.getLevel()).isClientSide()) {
+                player.sendSystemMessage(Component.translatable("gtmthings.machine.wireless_energy_hatch.tooltip.bind", new Object[] { TeamUtil.GetName(player) }));
             }
 
             this.updateEnergySubscription();
@@ -127,7 +128,7 @@ public class RhythmSourceInterface extends TieredIOPartMachine implements IBinda
             return false;
         } else if (is.is(GTItems.TOOL_DATA_STICK.asItem())) {
             this.owner_uuid = null;
-            if (this.getLevel().isClientSide()) {
+            if (Objects.requireNonNull(this.getLevel()).isClientSide()) {
                 player.sendSystemMessage(Component.translatable("gtmthings.machine.wireless_energy_hatch.tooltip.unbind"));
             }
 
@@ -143,7 +144,6 @@ public class RhythmSourceInterface extends TieredIOPartMachine implements IBinda
             this.owner_uuid = player.getUUID();
             this.updateEnergySubscription();
         }
-
     }
 
     public UUID getUUID() {

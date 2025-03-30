@@ -5,7 +5,7 @@ import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.machine.feature.IFancyUIMachine;
 import com.gregtechceu.gtceu.utils.FormattingUtil;
-import com.hepdd.gtmthings.utils.TeamUtil;
+
 import com.lowdragmc.lowdraglib.gui.texture.IGuiTexture;
 import com.lowdragmc.lowdraglib.gui.util.ClickData;
 import com.lowdragmc.lowdraglib.gui.widget.ComponentPanelWidget;
@@ -14,33 +14,39 @@ import com.lowdragmc.lowdraglib.gui.widget.LabelWidget;
 import com.lowdragmc.lowdraglib.gui.widget.Widget;
 import com.lowdragmc.lowdraglib.gui.widget.WidgetGroup;
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
+
+import net.minecraft.ChatFormatting;
+import net.minecraft.MethodsReturnNonnullByDefault;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.HoverEvent;
+import net.minecraft.network.chat.HoverEvent.Action;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.Style;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.phys.BlockHitResult;
+
+import com.hepdd.gtmthings.utils.TeamUtil;
 import com.mojang.datafixers.util.Pair;
+import org.jetbrains.annotations.NotNull;
+import top.ialdaiaxiariyay.rtt.api.rhythmsource.RhythmSourceManager;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 import java.util.Map.Entry;
+import java.util.UUID;
+
 import javax.annotation.ParametersAreNonnullByDefault;
-import net.minecraft.ChatFormatting;
-import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.HoverEvent;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.HoverEvent.Action;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.phys.BlockHitResult;
-import org.jetbrains.annotations.NotNull;
-import top.ialdaiaxiariyay.rtt.api.rhythmsource.RhythmSourceManager;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class RhythmSourceMonitor extends MetaMachine implements IFancyUIMachine {
+
     protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER;
     private static final BigInteger BIG_INTEGER_MAX_LONG;
     public static int p;
@@ -86,9 +92,8 @@ public class RhythmSourceMonitor extends MetaMachine implements IFancyUIMachine 
                 .addWidget(new LabelWidget(4, 5, this.self().getBlockState().getBlock().getDescriptionId()))
                 .addWidget((new ComponentPanelWidget(4, 17, this::addDisplayText))
                         .setMaxWidthLimit(150)
-                        .clickHandler(this::handleDisplayClick)
-                ));
-        group.setBackground(new IGuiTexture[]{GuiTextures.BACKGROUND_INVERSE});
+                        .clickHandler(this::handleDisplayClick)));
+        group.setBackground(new IGuiTexture[] { GuiTextures.BACKGROUND_INVERSE });
         return group;
     }
 
@@ -104,23 +109,22 @@ public class RhythmSourceMonitor extends MetaMachine implements IFancyUIMachine 
     private void addDisplayText(@NotNull List<Component> textList) {
         BigInteger rhythmTotal = RhythmSourceManager.getTeamRP(this.userid);
         textList.add(Component.translatable("rtt.machine.rhythm_source_monitor.tooltip.team",
-                        TeamUtil.GetName(this.holder.level(), this.userid))
+                TeamUtil.GetName(this.holder.level(), this.userid))
                 .withStyle(ChatFormatting.AQUA));
         textList.add(Component.translatable("rtt.machine.rhythm_source_monitor.tooltip.total",
-                        FormattingUtil.formatNumbers(rhythmTotal))
+                FormattingUtil.formatNumbers(rhythmTotal))
                 .withStyle(ChatFormatting.GRAY));
 
         BigDecimal avgUsage = this.getAvgUsage(rhythmTotal);
         if (avgUsage.compareTo(BigDecimal.ZERO) != 0) {
             textList.add(Component.translatable("rtt.machine.rhythm_source_monitor.tooltip.avg_usage",
-                            FormattingUtil.formatNumbers(avgUsage.abs()))
+                    FormattingUtil.formatNumbers(avgUsage.abs()))
                     .withStyle(avgUsage.signum() > 0 ? ChatFormatting.GREEN : ChatFormatting.RED));
         }
 
         textList.add(Component.translatable("rtt.machine.rhythm_source_monitor.tooltip.statistics")
                 .append(ComponentPanelWidget.withButton(
-                        this.all ? Component.translatable("rtt.machine.rhythm_source_monitor.tooltip.all")
-                                : Component.translatable("rtt.machine.rhythm_source_monitor.tooltip.team"),
+                        this.all ? Component.translatable("rtt.machine.rhythm_source_monitor.tooltip.all") : Component.translatable("rtt.machine.rhythm_source_monitor.tooltip.team"),
                         "all")));
 
         for (Entry<Pair<UUID, MetaMachine>, Long> entry : this.getSortedEntries()) {
@@ -139,8 +143,7 @@ public class RhythmSourceMonitor extends MetaMachine implements IFancyUIMachine 
                             Action.SHOW_TEXT,
                             Component.translatable("rtt.machine.rhythm_source_monitor.tooltip.position",
                                     pos,
-                                    TeamUtil.GetName(this.holder.level(), uuid))
-                    )));
+                                    TeamUtil.GetName(this.holder.level(), uuid)))));
 
             String changeText = (rp > 0 ? "+" : "-") + FormattingUtil.formatNumbers(Math.abs(rp)) + " RP/s";
             textList.add(machineName.append(" ")

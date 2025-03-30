@@ -41,7 +41,7 @@ public class RTTMachines {
     }
 
     public static void init() {
-    RTTSamllMachines.init();
+        RTTSamllMachines.init();
     }
 
     public static final MachineDefinition FIGURE_FACTORY = REGISTRATE.multiblock("figure_factory", WorkableElectricMultiblockMachine::new)
@@ -105,5 +105,4 @@ public class RTTMachines {
             .workableCasingRenderer(GTLCore.id("block/casings/dimensionally_transcendent_casing"),
                     GTCEu.id("block/multiblock/fusion_reactor"))
             .register();
-
 }
