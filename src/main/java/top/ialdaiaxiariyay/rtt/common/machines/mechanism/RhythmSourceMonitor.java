@@ -15,7 +15,7 @@ import com.lowdragmc.lowdraglib.gui.widget.Widget;
 import com.lowdragmc.lowdraglib.gui.widget.WidgetGroup;
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
 
-import net.minecraft.ChatFormatting;
+import net.minecraft.RTTChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -110,16 +110,16 @@ public class RhythmSourceMonitor extends MetaMachine implements IFancyUIMachine 
         BigInteger rhythmTotal = RhythmSourceManager.getTeamRP(this.userid);
         textList.add(Component.translatable("rtt.machine.rhythm_source_monitor.tooltip.team",
                 TeamUtil.GetName(this.holder.level(), this.userid))
-                .withStyle(ChatFormatting.AQUA));
+                .withStyle(RTTChatFormatting.AQUA));
         textList.add(Component.translatable("rtt.machine.rhythm_source_monitor.tooltip.total",
                 FormattingUtil.formatNumbers(rhythmTotal))
-                .withStyle(ChatFormatting.GRAY));
+                .withStyle(RTTChatFormatting.GRAY));
 
         BigDecimal avgUsage = this.getAvgUsage(rhythmTotal);
         if (avgUsage.compareTo(BigDecimal.ZERO) != 0) {
             textList.add(Component.translatable("rtt.machine.rhythm_source_monitor.tooltip.avg_usage",
                     FormattingUtil.formatNumbers(avgUsage.abs()))
-                    .withStyle(avgUsage.signum() > 0 ? ChatFormatting.GREEN : ChatFormatting.RED));
+                    .withStyle(avgUsage.signum() > 0 ? RTTChatFormatting.GREEN : RTTChatFormatting.RED));
         }
 
         textList.add(Component.translatable("rtt.machine.rhythm_source_monitor.tooltip.statistics")
@@ -147,7 +147,7 @@ public class RhythmSourceMonitor extends MetaMachine implements IFancyUIMachine 
 
             String changeText = (rp > 0 ? "+" : "-") + FormattingUtil.formatNumbers(Math.abs(rp)) + " RP/s";
             textList.add(machineName.append(" ")
-                    .append(Component.literal(changeText).withStyle(rp > 0 ? ChatFormatting.GREEN : ChatFormatting.RED))
+                    .append(Component.literal(changeText).withStyle(rp > 0 ? RTTChatFormatting.GREEN : RTTChatFormatting.RED))
                     .append(ComponentPanelWidget.withButton(Component.literal(" [ ] "), pos)));
         }
     }

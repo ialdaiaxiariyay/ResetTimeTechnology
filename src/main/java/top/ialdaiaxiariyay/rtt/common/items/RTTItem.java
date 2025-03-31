@@ -30,7 +30,7 @@ public class RTTItem {
 
     public static final ItemEntry<ComponentItem> NEWa_WORLD = REGISTRATE.item("newa_world", ComponentItem::create)
             .lang("New World")
-            .onRegister(GTItems.attach(RTTRecord.defaultSoundInteraction("star_trip")))
+            .onRegister(GTItems.attach(RTTRecord.defaultSoundInteraction("star_trip", 6)))
             .register();
 
     public static final ItemEntry<ComponentItem> DEBUG_STRUCTURE_WRITER = REGISTRATE

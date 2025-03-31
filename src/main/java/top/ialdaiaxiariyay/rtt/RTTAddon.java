@@ -1,5 +1,6 @@
 package top.ialdaiaxiariyay.rtt;
 
+import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.addon.events.MaterialCasingCollectionEvent;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
@@ -14,10 +15,8 @@ import top.ialdaiaxiariyay.rtt.common.materials.RTTElements;
 
 import java.util.function.Consumer;
 
-@com.gregtechceu.gtceu.api.addon.GTAddon
+@GTAddon
 public class RTTAddon implements IGTAddon {
-
-    private static Consumer<FinishedRecipe> provider;
 
     @Override
     public GTRegistrate getRegistrate() {
