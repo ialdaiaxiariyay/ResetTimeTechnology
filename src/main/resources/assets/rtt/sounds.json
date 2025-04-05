@@ -1,6 +1,6 @@
 {
   "hoshi_no_umi": {
-    "subtitle": "subtitles.hoshi_no_umi",
+    "subtitle": "rtt.subtitles.hoshi_no_umi",
     "sounds": [
       {
         "name": "rtt:hoshi_no_umi",
@@ -9,7 +9,7 @@
     ]
   },
   "a_place_in_the_sunshine": {
-    "subtitle": "subtitles.a_place_in_the_sunshine",
+    "subtitle": "rtt.subtitles.a_place_in_the_sunshine",
     "sounds": [
       {
         "name": "rtt:a_place_in_the_sunshine",
@@ -18,7 +18,7 @@
     ]
   },
   "star_trip": {
-    "subtitle": "subtitles.startrip",
+    "subtitle": "rtt.subtitles.startrip",
     "sounds": [
       {
         "name": "rtt:star_trip",
@@ -27,7 +27,7 @@
     ]
   },
   "yi_lirile": {
-    "subtitle": "subtitles.yi_lirile",
+    "subtitle": "rtt.subtitles.yi_lirile",
     "sounds": [
       {
         "name": "rtt:yi_lirile",
@@ -35,8 +35,8 @@
       }
     ]
   },
-  "harmstimuli": {
-    "subtitle": "subtitles.harmstimuli",
+  "harm_stimuli": {
+    "subtitle": "rtt.subtitles.harm_stimuli",
     "sounds": [
       {
         "name": "rtt:harm_stimuli",
@@ -45,10 +45,28 @@
     ]
   },
   "harmonious": {
-    "subtitle": "subtitles.harmonious",
+    "subtitle": "rtt.subtitles.harmonious",
     "sounds": [
       {
         "name": "rtt:harmonious",
+        "stream": true
+      }
+    ]
+  },
+  "resuscitated_hope": {
+    "subtitle": "rtt.subtitles.resuscitated_hope",
+    "sounds": [
+      {
+        "name": "rtt:resuscitated_hope",
+        "stream": true
+      }
+    ]
+  },
+  "uragiri_alice": {
+    "subtitle": "rtt.subtitles.uragiri_alice",
+    "sounds": [
+      {
+        "name": "rtt:uragiri_alice",
         "stream": true
       }
     ]

@@ -14,6 +14,7 @@ import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.api.registries.RTTRecipeBuilder;
 import top.ialdaiaxiariyay.rtt.common.items.RTTItem;
 import top.ialdaiaxiariyay.rtt.common.machines.machines.RTTMachines;
+import top.ialdaiaxiariyay.rtt.common.machines.recipes.RTTRecipeTypes;
 
 import java.util.function.Consumer;
 
@@ -72,8 +73,73 @@ public class MiscRecipes {
                 .inputFluids(GTLMaterials.Eternity.getFluid(110592))
                 .inputFluids(GTLMaterials.TranscendentMetal.getFluid(18432))
                 .outputItems(Registries.getItem("expatternprovider:fishbig"), 2)
-                .duration(1000)
-                .EUt(GTValues.VEX[GTValues.MAX] * 4194303)
+                .duration(1600)
+                .EUt(GTValues.VEX[GTValues.MAX] * 16384)
                 .save(provider);
+
+        new RTTRecipeBuilder(RTT.id("star_trip"), MULTIVERSE_INFORMATION_COLLECTOR)
+                .RPt(GTValues.VEX[GTValues.MAX] * 16384)
+                .circuitMeta(1)
+                .inputItems(RTTItem.RECORD_SUBSTRATES)
+                .outputItems(RTTItem.STAR_TRIP)
+                .duration(160)
+                .save(provider);
+
+        new RTTRecipeBuilder(RTT.id("hoshi_no_umi"), MULTIVERSE_INFORMATION_COLLECTOR)
+                .RPt(GTValues.VEX[GTValues.MAX] * 16384)
+                .circuitMeta(2)
+                .inputItems(RTTItem.RECORD_SUBSTRATES)
+                .outputItems(RTTItem.HOSHI_NO_UMI)
+                .duration(160)
+                .save(provider);
+
+        new RTTRecipeBuilder(RTT.id("a_place_in_the_sunshine"), MULTIVERSE_INFORMATION_COLLECTOR)
+                .RPt(GTValues.VEX[GTValues.MAX] * 16384)
+                .circuitMeta(3)
+                .inputItems(RTTItem.RECORD_SUBSTRATES)
+                .outputItems(RTTItem.A_PLACE_IN_THE_SUNSHINE)
+                .duration(160)
+                .save(provider);
+
+        new RTTRecipeBuilder(RTT.id("yi_lirile"), MULTIVERSE_INFORMATION_COLLECTOR)
+                .RPt(GTValues.VEX[GTValues.MAX] * 16384)
+                .circuitMeta(4)
+                .inputItems(RTTItem.RECORD_SUBSTRATES)
+                .outputItems(RTTItem.YI_LIRILE)
+                .duration(160)
+                .save(provider);
+
+        new RTTRecipeBuilder(RTT.id("harm_stimuli"), MULTIVERSE_INFORMATION_COLLECTOR)
+                .RPt(GTValues.VEX[GTValues.MAX] * 16384)
+                .circuitMeta(5)
+                .inputItems(RTTItem.RECORD_SUBSTRATES)
+                .outputItems(RTTItem.HARM_STIMULI)
+                .duration(160)
+                .save(provider);
+
+        new RTTRecipeBuilder(RTT.id("harmonious"), MULTIVERSE_INFORMATION_COLLECTOR)
+                .RPt(GTValues.VEX[GTValues.MAX] * 16384)
+                .circuitMeta(6)
+                .inputItems(RTTItem.RECORD_SUBSTRATES)
+                .outputItems(RTTItem.HARMONIOUS)
+                .duration(160)
+                .save(provider);
+
+        new RTTRecipeBuilder(RTT.id("resuscitated_hope"), MULTIVERSE_INFORMATION_COLLECTOR)
+                .RPt(GTValues.VEX[GTValues.MAX] * 16384)
+                .circuitMeta(7)
+                .inputItems(RTTItem.RECORD_SUBSTRATES)
+                .outputItems(RTTItem.RESUSCITATED_HOPE)
+                .duration(160)
+                .save(provider);
+
+        new RTTRecipeBuilder(RTT.id("uragiri_alice"), MULTIVERSE_INFORMATION_COLLECTOR)
+                .RPt(GTValues.VEX[GTValues.MAX] * 16384)
+                .circuitMeta(8)
+                .inputItems(RTTItem.RECORD_SUBSTRATES)
+                .outputItems(RTTItem.URAGIRI_ALICE)
+                .duration(160)
+                .save(provider);
+
     }
 }

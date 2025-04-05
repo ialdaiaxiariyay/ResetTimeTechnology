@@ -17,4 +17,10 @@ public class RTTRecipeTypes {
             .setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.MOTOR);
+
+    public final static GTRecipeType MULTIVERSE_INFORMATION_COLLECTOR = register("multiverse_information_collector", MULTIBLOCK)
+            .setMaxIOSize(2, 1, 0, 0)
+            .setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.MOTOR);
 }

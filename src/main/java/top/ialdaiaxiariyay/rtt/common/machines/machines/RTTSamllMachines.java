@@ -46,7 +46,7 @@ public class RTTSamllMachines {
                     holder,
                     14,          // tier
                     IO.IN,       // IO模式
-                    4194304           // amperage（安培值，按需配置）
+                    67108863           // amperage（安培值，按需配置）
             ))
             .rotationState(RotationState.ALL)
             .compassNodeSelf()
@@ -63,7 +63,7 @@ public class RTTSamllMachines {
                     holder,
                     14,          // tier
                     IO.IN,       // IO模式
-                    4194304           // amperage（安培值，按需配置）
+                    67108863           // amperage（安培值，按需配置）
             ))
             .rotationState(RotationState.ALL)
             .compassNodeSelf()
@@ -80,7 +80,7 @@ public class RTTSamllMachines {
                     holder,
                     14,          // tier
                     IO.OUT,       // IO模式
-                    4194304           // amperage（安培值，按需配置）
+                    67108863           // amperage（安培值，按需配置）
             ))
             .rotationState(RotationState.ALL)
             .compassNodeSelf()
@@ -97,7 +97,7 @@ public class RTTSamllMachines {
                     holder,
                     14,          // tier
                     IO.OUT,       // IO模式
-                    4194304           // amperage（安培值，按需配置）
+                    67108863           // amperage（安培值，按需配置）
             ))
             .rotationState(RotationState.ALL)
             .compassNodeSelf()
