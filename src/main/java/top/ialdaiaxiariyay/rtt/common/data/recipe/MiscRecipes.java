@@ -8,13 +8,11 @@ import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.world.level.block.Blocks;
 
 import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.api.registries.RTTRecipeBuilder;
 import top.ialdaiaxiariyay.rtt.common.items.RTTItem;
 import top.ialdaiaxiariyay.rtt.common.machines.machines.RTTMachines;
-import top.ialdaiaxiariyay.rtt.common.machines.recipes.RTTRecipeTypes;
 
 import java.util.function.Consumer;
 
@@ -140,6 +138,5 @@ public class MiscRecipes {
                 .outputItems(RTTItem.URAGIRI_ALICE)
                 .duration(160)
                 .save(provider);
-
     }
 }

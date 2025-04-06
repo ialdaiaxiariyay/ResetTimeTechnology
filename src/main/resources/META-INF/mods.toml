@@ -8,6 +8,7 @@ version = "${version}"
 displayName = "${mod_name}"
 displayURL = "${mod_url}"
 authors="${mod_author}"
+logoFile = "icon.png"
 description = "Reset Time Technology"
 
 [[dependencies.${mod_id}]]

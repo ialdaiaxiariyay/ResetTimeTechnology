@@ -2,9 +2,8 @@ package top.ialdaiaxiariyay.rtt.common.items.mechanism;
 
 import com.gregtechceu.gtceu.api.item.IComponentItem;
 import com.gregtechceu.gtceu.api.item.component.IInteractionItem;
-
 import com.gregtechceu.gtceu.api.item.component.IItemComponent;
-import com.tterrag.registrate.util.nullness.NonNullConsumer;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.network.chat.Component;
@@ -14,6 +13,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+
+import com.tterrag.registrate.util.nullness.NonNullConsumer;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -62,11 +63,11 @@ public class RTTRecord {
                             .forEach(record -> player.getCooldowns().removeCooldown(record));
 
                     // 播放新声音
-                String command = String.format("playsound rtt:%s music @s ~ ~ ~", soundName);
-                Objects.requireNonNull(player.getServer()).getCommands().performPrefixedCommand(
-                        player.createCommandSourceStack().withPermission(permissionLevel),
-                        command);
-                player.sendSystemMessage(Component.literal("正在播放：" + name));
+                    String command = String.format("playsound rtt:%s music @s ~ ~ ~", soundName);
+                    Objects.requireNonNull(player.getServer()).getCommands().performPrefixedCommand(
+                            player.createCommandSourceStack().withPermission(permissionLevel),
+                            command);
+                    player.sendSystemMessage(Component.literal("正在播放：" + name));
                     // 设置当前唱片冷却
                     player.getCooldowns().addCooldown(item, cooldownTicks);
                 }
@@ -76,7 +77,7 @@ public class RTTRecord {
     }
 
     // 常用配置的快捷方法
-    public static IInteractionItem defaultSoundInteraction(String soundName ,int cooldownTicks, String name) {
+    public static IInteractionItem defaultSoundInteraction(String soundName, int cooldownTicks, String name) {
         return createSoundInteraction(soundName, 4, cooldownTicks, name); // 默认使用4级权限
     }
 }
