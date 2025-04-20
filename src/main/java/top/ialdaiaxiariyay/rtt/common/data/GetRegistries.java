@@ -17,7 +17,7 @@ public class GetRegistries {
     public static Item getItem(String s) {
         Item i = ForgeRegistries.ITEMS.getValue(new ResourceLocation(s));
         if (i == Items.AIR) {
-            RTT.LOGGER.atError().log("未找到ID为{}的物品", s);
+            RTT.LOGGER.error("未找到ID为{}的物品", s);
             return Items.BARRIER;
         }
         return i;
@@ -34,7 +34,7 @@ public class GetRegistries {
     public static Block getBlock(String s) {
         Block b = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(s));
         if (b == Blocks.AIR) {
-            RTT.LOGGER.atError().log("未找到ID为{}的方块", s);
+            RTT.LOGGER.error("未找到ID为{}的方块", s);
             return Blocks.BARRIER;
         }
         return b;
@@ -43,7 +43,7 @@ public class GetRegistries {
     public static Fluid getFluid(String s) {
         Fluid f = ForgeRegistries.FLUIDS.getValue(new ResourceLocation(s));
         if (f == Fluids.EMPTY) {
-            RTT.LOGGER.atError().log("未找到ID为{}的流体", s);
+            RTT.LOGGER.error("未找到ID为{}的流体", s);
             return Fluids.WATER;
         }
         return f;

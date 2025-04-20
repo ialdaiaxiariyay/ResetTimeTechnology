@@ -16,7 +16,10 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.ModelEvent;
+import net.minecraftforge.client.event.RenderGuiEvent;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
+import net.minecraftforge.client.model.obj.ObjLoader;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -25,8 +28,10 @@ import net.minecraftforge.fml.common.Mod;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
+import org.jetbrains.annotations.NotNull;
 import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.api.rhythmsource.RhythmSourceSavedData;
+import top.ialdaiaxiariyay.rtt.common.items.mechanism.RhapsodyWeaponItem;
 import top.ialdaiaxiariyay.rtt.common.items.mechanism.structurewrite.StructureWriteBehavior;
 
 @Mod.EventBusSubscriber(modid = RTT.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
@@ -118,4 +123,10 @@ public class ClientEventListener {
             RhythmSourceSavedData.INSTANCE = RhythmSourceSavedData.getOrCreate(serverLevel);
         }
     }
+
+    @SubscribeEvent
+    public static void registerGeometryLoaders(ModelEvent.@NotNull RegisterGeometryLoaders event) {
+        event.register("obj", new ObjLoader());
+    }
+
 }

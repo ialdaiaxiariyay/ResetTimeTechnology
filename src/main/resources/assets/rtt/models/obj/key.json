@@ -1,0 +1,9 @@
+{
+  "loader": "forge:obj",
+  "model": "rtt:models/obj/key.obj",
+  "flip_v": true,
+  "textures": {
+    "particle": "rtt:item/obj/key",
+    "texture0": "rtt:item/obj/key"
+  }
+}

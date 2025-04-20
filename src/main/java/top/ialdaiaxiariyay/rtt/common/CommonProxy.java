@@ -17,10 +17,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.api.machine.RTTCapability;
 import top.ialdaiaxiariyay.rtt.common.data.RTTCreativeModeTabs;
+import top.ialdaiaxiariyay.rtt.common.forge.NetworkHandler;
 import top.ialdaiaxiariyay.rtt.common.machines.machines.RTTMachines;
 import top.ialdaiaxiariyay.rtt.common.machines.recipes.RTTRecipeTypes;
 import top.ialdaiaxiariyay.rtt.common.materials.RTTMaterials;
 import top.ialdaiaxiariyay.rtt.config.RTTConfigHolder;
+import top.ialdaiaxiariyay.rtt.data.generated.DataGenerated;
 
 import static top.ialdaiaxiariyay.rtt.api.registries.RTTRegistration.REGISTRATE;
 
@@ -36,9 +38,11 @@ public class CommonProxy {
         eventBus.addListener(this::modifyMaterials);
         eventBus.addGenericListener(GTRecipeType.class, this::registerRecipeTypes);
         eventBus.addGenericListener(MachineDefinition.class, this::registerMachines);
+        NetworkHandler.register();
     }
 
     public static void init() {
+        DataGenerated.init();
         RTTCreativeModeTabs.init();
         RTTConfigHolder.init();
     }

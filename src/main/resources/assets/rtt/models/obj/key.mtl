@@ -1,0 +1,16 @@
+newmtl m0
+map_Kd #texture0
+Ka 0.5 0.5 0.5
+Kd 1 1 1
+Ks 0 0 0
+Ns 50
+d 1
+
+newmtl m1
+map_Kd #texture0
+Ka 0.5 0.5 0.5
+Kd 1 1 1
+Ks 0 0 0
+Ns 50
+d 0.7
+
