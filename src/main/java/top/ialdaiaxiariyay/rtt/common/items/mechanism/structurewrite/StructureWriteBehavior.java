@@ -134,7 +134,7 @@ public class StructureWriteBehavior implements IItemUIFactory {
             blockPattern.legend.forEach((b, c) -> {
                 if (c.equals(' ')) return;
                 builder.append(".where(\"").append(c).append("\", Predicates.blocks(Registries.getBlock(\"")
-                        .append(b.kjs$id).append("\")))\n");
+                        .append(b.kjs$getId()).append("\")))\n");
             });
             // 获取当前日期时间
             LocalDateTime now = LocalDateTime.now();
