@@ -22,7 +22,6 @@ import top.ialdaiaxiariyay.rtt.common.machines.machines.RTTMachines;
 import top.ialdaiaxiariyay.rtt.common.machines.recipes.RTTRecipeTypes;
 import top.ialdaiaxiariyay.rtt.common.materials.RTTMaterials;
 import top.ialdaiaxiariyay.rtt.config.RTTConfigHolder;
-import top.ialdaiaxiariyay.rtt.data.generated.DataGenerated;
 
 import static top.ialdaiaxiariyay.rtt.api.registries.RTTRegistration.REGISTRATE;
 
@@ -31,6 +30,7 @@ public class CommonProxy {
     public CommonProxy() {
         CommonProxy.init();
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        eventBus.register(this);
         REGISTRATE.registerEventListeners(eventBus);
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::addMaterialRegistries);
@@ -47,7 +47,6 @@ public class CommonProxy {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-        DataGenerated.init();
     }
 
     private void addMaterialRegistries(MaterialRegistryEvent event) {

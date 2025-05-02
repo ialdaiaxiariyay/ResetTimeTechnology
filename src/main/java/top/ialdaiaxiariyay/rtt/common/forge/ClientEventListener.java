@@ -17,7 +17,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.ModelEvent;
-import net.minecraftforge.client.event.RenderGuiEvent;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.client.model.obj.ObjLoader;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -31,15 +30,14 @@ import com.mojang.blaze3d.vertex.*;
 import org.jetbrains.annotations.NotNull;
 import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.api.rhythmsource.RhythmSourceSavedData;
-import top.ialdaiaxiariyay.rtt.common.items.mechanism.RhapsodyWeaponItem;
 import top.ialdaiaxiariyay.rtt.common.items.mechanism.structurewrite.StructureWriteBehavior;
 
-@Mod.EventBusSubscriber(modid = RTT.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
-@OnlyIn(Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = RTT.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ClientEventListener {
 
     @SubscribeEvent
-    public static void onRenderWorldLast(RenderLevelStageEvent event) {
+    @OnlyIn(Dist.CLIENT)
+    public static void onRenderWorldLast(@NotNull RenderLevelStageEvent event) {
         RenderLevelStageEvent.Stage stage = event.getStage();
         if (stage == RenderLevelStageEvent.Stage.AFTER_TRIPWIRE_BLOCKS) {
             Minecraft mc = Minecraft.getInstance();
@@ -107,6 +105,7 @@ public class ClientEventListener {
     public static int Devmode = 1;
 
     @SubscribeEvent
+    @OnlyIn(Dist.CLIENT)
     public static void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent event) {
         if (Devmode == 1) {
             Player player = event.getEntity();
@@ -117,7 +116,7 @@ public class ClientEventListener {
     }
 
     @SubscribeEvent
-    public static void serverSetup(LevelEvent.Load event) {
+    public static void serverSetup(LevelEvent.@NotNull Load event) {
         LevelAccessor var2 = event.getLevel();
         if (var2 instanceof ServerLevel serverLevel) {
             RhythmSourceSavedData.INSTANCE = RhythmSourceSavedData.getOrCreate(serverLevel);
@@ -125,8 +124,8 @@ public class ClientEventListener {
     }
 
     @SubscribeEvent
+    @OnlyIn(Dist.CLIENT)
     public static void registerGeometryLoaders(ModelEvent.@NotNull RegisterGeometryLoaders event) {
         event.register("obj", new ObjLoader());
     }
-
 }

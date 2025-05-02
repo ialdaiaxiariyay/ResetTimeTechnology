@@ -1,14 +1,11 @@
 package top.ialdaiaxiariyay.rtt.common.items;
 
 import com.gregtechceu.gtceu.api.item.ComponentItem;
-import com.gregtechceu.gtceu.api.item.component.IInteractionItem;
-import com.gregtechceu.gtceu.api.item.component.IItemComponent;
 import com.gregtechceu.gtceu.common.data.GTCompassSections;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.item.DataItemBehavior;
 import com.gregtechceu.gtceu.common.item.TooltipBehavior;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
