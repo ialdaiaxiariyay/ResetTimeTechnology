@@ -7,29 +7,20 @@ import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.common.items.mechanism.RhapsodyWeaponItem;
 
 public class NetworkHandler {
-    private static final String PROTOCOL = "1";
+    private static final String PROTOCOL_VERSION = "1";
     public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(
             new ResourceLocation(RTT.MOD_ID, "main"),
-            () -> PROTOCOL,
-            PROTOCOL::equals,
-            PROTOCOL::equals
+            () -> PROTOCOL_VERSION,
+            PROTOCOL_VERSION::equals,
+            PROTOCOL_VERSION::equals
     );
 
     public static void register() {
-        int id = 0;
-        CHANNEL.registerMessage(
-                id++,
-                AttackModeSyncPacket.class,
-                AttackModeSyncPacket::encode,
-                AttackModeSyncPacket::decode,
-                AttackModeSyncPacket::handle
-        );
-        CHANNEL.registerMessage(
-                id++,
+        int packetId = 0;
+        CHANNEL.registerMessage(packetId++,
                 RhapsodyWeaponItem.BeamPacket.class,
                 RhapsodyWeaponItem.BeamPacket::encode,
                 RhapsodyWeaponItem.BeamPacket::decode,
-                RhapsodyWeaponItem.BeamPacket::handle
-        );
+                RhapsodyWeaponItem.BeamPacket::handle);
     }
 }

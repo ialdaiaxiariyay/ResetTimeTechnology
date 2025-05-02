@@ -36,9 +36,15 @@ public class TooltipsLang{
        add("rtt.machine.rp_input", "RP Input: %d", "RP输入：%d");
        add("rtt.machine.rp_output", "RP Output: %d", "RP输出：%d");
        add("rtt.machine.rp_stored", "Capacity: %d", "功率：%d");
-       add("msg.rtt.rhapsody_weapon.mode","Mode","模式");
-       add("msg.rtt.msg.rtt.rhapsody_weapon.mode_normal","Normal mode","普通模式");
-       add("msg.rtt.msg.rtt.rhapsody_weapon.mode_advanced","Advanced Mode","高级模式");
-       add("message.rtt.rhapsody_weapon.insufficient_rp","Insufficient RP!","RP不足！");
+       add("tooltip.rtt.mode.title","Long-range attack mode","远程攻击模式");
+       add("tooltip.rtt.mode.normal","Normal mode","普通模式");
+       add("tooltip.rtt.mode.advanced","Advanced mode","高级模式");
+       add("msg.rtt.mode.change","Long-range mode change:","远程模式已切换至：");
+       add("msg.rtt.mode.normal","Normal mode","普通模式");
+       add("msg.rtt.mode.advanced","Advanced mode","高级模式");
+       add("msg.rtt.insufficient_rp","Insufficient RP!","RP不足！");
+       add("warp_spindle.tooltip.0","Melee Mode: Left-click Attack: Eliminates struck entity and deduces RP equal to §b1850%§r of the target's maximum health value from the rhythm network","近战模式:左键攻击§4立即消除目标生物实体§r，并从RP网络中扣除相当于该生物§b1850%§r最大生命值的RP");
+       add("warp_spindle.tooltip.1","Standard Ranged Mode: Right-click Activation: Emits a particle beam that §aacquires§r the target's maximum health value, then §creduces health to zero§r. Deduces §b3500%§r of acquired value","远程普通模式：右键释放一道粒子光束，根据击中的§a生物生命值上限扣除RP§r，§4设置击中的生物生命值为0§r，并且扣除RP网络中的RP，扣除的RP为击中的生物当前生命值上限的§b3500%§r");
+       add("warp_spindle.tooltip.2","Advanced Ranged Mode: Right-click Activation: Releases a particle beam causing §dinstant elimination§r of struck entities. Deduces §b4500%§r of the target's maximum health value","远程高级模式：右键释放一道粒子光束，§4击中生物后直接删除生物实体§r，扣除的RP为击中的生物当前生命值上限的§b4500%§r");
     }
 }

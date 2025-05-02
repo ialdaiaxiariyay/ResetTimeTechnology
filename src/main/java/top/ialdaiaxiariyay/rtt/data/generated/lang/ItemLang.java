@@ -6,6 +6,7 @@ public class ItemLang{
     public static void init() {
        add("item.rtt.new_world", "§dNew world", "§d新世界");
        add("item.rtt.record_substrates","Record Substrates","唱片基板");
+       add("item.rtt.warp_spindle","Warp Spindle","时空扭曲之钥");
        add("item.rtt.advanced_data_module","Advanced Data Module","高级数据模块");
        add("item.rtt.debug_structure_writer","Debug Structure Writer","结构导出工具");
        add("item.rtt.a_place_in_the_sunshine","ひだまりの場所","ひだまりの場所");

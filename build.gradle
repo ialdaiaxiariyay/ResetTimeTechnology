@@ -25,6 +25,19 @@ tasks.withType(Jar).configureEach {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
+tasks.register('copyGeneratedResources', Copy) {
+    from file("src/generated/resources/")
+    into file("src/main/resources")
+    delete file("src/main/resources/.cache")
+    dependsOn 'runData'
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+afterEvaluate {
+    tasks.named('runData') {
+        finalizedBy 'copyGeneratedResources'
+    }
+}
+
 java {
     withSourcesJar()
 }

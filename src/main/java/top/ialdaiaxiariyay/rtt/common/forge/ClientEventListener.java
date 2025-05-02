@@ -110,7 +110,7 @@ public class ClientEventListener {
         if (Devmode == 1) {
             Player player = event.getEntity();
             if (!player.level().isClientSide()) {
-                player.sendSystemMessage(Component.literal("提示：这是rtt的开发测试版"));
+                player.sendSystemMessage(Component.translatable("rtt.mod.tips"));
             }
         }
     }

@@ -38,12 +38,13 @@ public class RTTItem {
     public static final ItemEntry<RhapsodyWeaponItem> WARP_SPINDLE = REGISTRATE
             .item("warp_spindle", RhapsodyWeaponItem::new)
             .onRegister(
-                    attach(new TooltipBehavior(lines -> lines.add(Component.literal("远程模式：右键释放一道粒子光束，击中生物后获取生物当前生命值上限，获取生物生命值上限后设置生物当前生命值为0，并且扣除RP网络中的RP，扣除的RP为获取的生物当前生命值上限*35%")))))
+                    attach(new TooltipBehavior(lines -> lines.add(Component.translatable("warp_spindle.tooltip.1")))))
             .onRegister(
-                    attach(new TooltipBehavior(lines -> lines.add(Component.literal("远程模式2：右键释放一道粒子光束，击中生物后直接删除实体，扣除的RP为获取的生物当前生命值上限*45%")))))
+                    attach(new TooltipBehavior(lines -> lines.add(Component.translatable("warp_spindle.tooltip.2")))))
             .onRegister(
-                    attach(new TooltipBehavior(lines -> lines.add(Component.literal("近战模式：左键攻击时移除击中的生物实体，根据获取的生物生命值上限扣除RP，扣除的RP为获取的生物当前生命值上限*185%")))))
+                    attach(new TooltipBehavior(lines -> lines.add(Component.translatable("warp_spindle.tooltip.0")))))
             .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), new ResourceLocation(RTT.MOD_ID, "obj/key")))
+            .properties(p -> p.stacksTo(1))
             .register();
 
     public static final ItemEntry<ComponentItem> STAR_TRIP = REGISTRATE.item("star_trip", ComponentItem::create)
