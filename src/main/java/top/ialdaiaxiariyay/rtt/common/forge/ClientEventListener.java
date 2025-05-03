@@ -19,6 +19,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.client.model.obj.ObjLoader;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -30,6 +31,7 @@ import com.mojang.blaze3d.vertex.*;
 import org.jetbrains.annotations.NotNull;
 import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.api.rhythmsource.RhythmSourceSavedData;
+import top.ialdaiaxiariyay.rtt.common.commands.RTTCommands;
 import top.ialdaiaxiariyay.rtt.common.items.mechanism.structurewrite.StructureWriteBehavior;
 
 @Mod.EventBusSubscriber(modid = RTT.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
@@ -127,5 +129,10 @@ public class ClientEventListener {
     @OnlyIn(Dist.CLIENT)
     public static void registerGeometryLoaders(ModelEvent.@NotNull RegisterGeometryLoaders event) {
         event.register("obj", new ObjLoader());
+    }
+
+    @SubscribeEvent
+    public static void onCommandRegister(@NotNull RegisterCommandsEvent event) {
+        RTTCommands.init(event.getDispatcher());
     }
 }
