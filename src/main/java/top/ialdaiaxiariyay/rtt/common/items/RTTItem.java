@@ -86,9 +86,9 @@ public class RTTItem {
             .item("debug_structure_writer", ComponentItem::create)
             .onRegister(GTItems.attach(StructureWriteBehavior.INSTANCE))
             .onRegister(
-                    attach(new TooltipBehavior(lines -> lines.add(Component.literal("按照时间创建")))))
+                    attach(new TooltipBehavior(lines -> lines.add(Component.translatable("rtt.debug_structure_writer.0")))))
             .onRegister(
-                    attach(new TooltipBehavior(lines -> lines.add(Component.literal("文件导出在logs/rtt")))))
+                    attach(new TooltipBehavior(lines -> lines.add(Component.translatable("rtt.debug_structure_writer.1")))))
             .model(NonNullBiConsumer.noop())
             .register();
 

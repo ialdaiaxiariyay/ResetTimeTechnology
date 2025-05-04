@@ -49,7 +49,7 @@ public class RTTRecord {
                 // 检查当前唱片冷却
                 if (player.getCooldowns().isOnCooldown(item)) {
                     if (!level.isClientSide()) {
-                        player.sendSystemMessage(Component.literal("唱片播放中"));
+                        player.sendSystemMessage(Component.translatable("rtt.record.0"));
                     }
                     return InteractionResultHolder.fail(stack);
                 }
@@ -67,7 +67,7 @@ public class RTTRecord {
                     Objects.requireNonNull(player.getServer()).getCommands().performPrefixedCommand(
                             player.createCommandSourceStack().withPermission(permissionLevel),
                             command);
-                    player.sendSystemMessage(Component.literal("正在播放：" + name));
+                    player.sendSystemMessage(Component.translatable("rtt.record.1" + name));
                     // 设置当前唱片冷却
                     player.getCooldowns().addCooldown(item, cooldownTicks);
                 }
