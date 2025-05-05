@@ -88,6 +88,16 @@ public class RhythmSourceManager {
         GlobalRhythmSource.put(TeamUtil.getTeamUUID(user_uuid), RP);
     }
 
+    public static void setTeamRP(UUID user_uuid, Long RP) {
+        try {
+            RhythmSourceSavedData.INSTANCE.setDirty(true);
+        } catch (Exception e) {
+            System.err.println("无法标记韵律源点数据为脏状态（设置操作）");
+            e.printStackTrace();
+        }
+        GlobalRhythmSource.put(TeamUtil.getTeamUUID(user_uuid), BigInteger.valueOf(RP));
+    }
+
     // 清空全局韵律源点数据（调试或重置用）
     public static void clearGlobalSourceMaps() {
         GlobalRhythmSource.clear();
