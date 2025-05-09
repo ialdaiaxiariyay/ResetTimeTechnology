@@ -5,6 +5,7 @@
 package top.ialdaiaxiariyay.rtt.api.machine;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
+
 import com.gregtechceu.gtceu.api.capability.recipe.RecipeCapability;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.machine.TickableSubscription;

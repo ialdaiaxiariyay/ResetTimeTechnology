@@ -7,8 +7,6 @@ import top.ialdaiaxiariyay.rtt.common.CommonProxy;
 @OnlyIn(Dist.CLIENT)
 public class ClientProxy extends CommonProxy {
 
-
-
     public ClientProxy() {
         super();
         init();

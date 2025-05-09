@@ -13,5 +13,6 @@ public class BlockLang{
         add("block.rtt.rhythm_source_output_laser","Rhythm Source Output(Laser)","输出型韵律源点接口(激光仓)");
         add("block.rtt.rhythm_source_input_energy","Rhythm Source Input(Energy)","输入型韵律源点接口(能源仓)");
         add("block.rtt.rhythm_source_output_energy","Rhythm Source Output(Energy)","输出型韵律源点接口(能源仓)");
+        add("block.rtt.performance_monitor","Performance monitor","性能监控器");
     }
 }

@@ -8,5 +8,6 @@ public class AddRecips {
 
     public static void init(Consumer<FinishedRecipe> provider) {
         MiscRecipes.init(provider);
+        VanillaRecipe.init(provider);
     }
 }

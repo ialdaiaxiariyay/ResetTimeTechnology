@@ -138,5 +138,6 @@ public class MiscRecipes {
                 .outputItems(RTTItem.URAGIRI_ALICE)
                 .duration(160)
                 .save(provider);
+
     }
 }
