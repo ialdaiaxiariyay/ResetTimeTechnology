@@ -4,7 +4,10 @@
   "package": "top.ialdaiaxiariyay.rtt.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "gtl.AnnihilateGeneratorRendererMixin",
+    "gtl.EyeOfHarmonyRendererMixin",
     "gtl.GTLAddonMixin",
+    "gtl.SpaceElevatorRendererMixin",
     "gtm.MetaMachineMixin"
   ],
   "client": [

@@ -42,12 +42,12 @@ public class CommonProxy {
     }
 
     public static void init() {
+        RTT.LOGGER.info("RTT CommonProxy is Init");
         RTTCreativeModeTabs.init();
         RTTConfigHolder.init();
     }
 
-    private void clientSetup(final FMLClientSetupEvent event) {
-    }
+    private void clientSetup(final FMLClientSetupEvent event) {}
 
     private void addMaterialRegistries(MaterialRegistryEvent event) {
         GTCEuAPI.materialManager.createRegistry(RTT.MOD_ID);

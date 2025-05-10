@@ -1,8 +1,5 @@
 package top.ialdaiaxiariyay.rtt.common.machines.mechanism.rendered;
 
-import org.gtlcore.gtlcore.GTLCore;
-import org.gtlcore.gtlcore.client.ClientUtil;
-
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
@@ -19,8 +16,11 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.model.data.ModelData;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import org.gtlcore.gtlcore.GTLCore;
+import org.gtlcore.gtlcore.client.ClientUtil;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Quaternionf;
+import top.ialdaiaxiariyay.rtt.config.RTTConfigHolder;
 
 import java.util.function.Consumer;
 
@@ -35,6 +35,7 @@ public class MultiverseInformationCollector extends WorkableCasingMachineRendere
     @OnlyIn(Dist.CLIENT)
     public void render(BlockEntity blockEntity, float partialTicks, PoseStack poseStack, MultiBufferSource buffer,
                        int combinedLight, int combinedOverlay) {
+                       if(RTTConfigHolder.INSTANCE.MachineRendered){
         if (blockEntity instanceof IMachineBlockEntity machineBlockEntity &&
                 machineBlockEntity.getMetaMachine() instanceof WorkableElectricMultiblockMachine machine && machine.isActive()) {
             float tick = machine.getOffsetTimer() + partialTicks;
@@ -50,6 +51,7 @@ public class MultiverseInformationCollector extends WorkableCasingMachineRendere
             renderStar(tick, poseStack, buffer);
             poseStack.popPose();
         }
+                       }
     }
 
     @OnlyIn(Dist.CLIENT)

@@ -1,14 +1,13 @@
 package top.ialdaiaxiariyay.rtt.common.data.recipe;
 
-import org.gtlcore.gtlcore.common.data.*;
-import org.gtlcore.gtlcore.common.data.machines.AdvancedMultiBlockMachine;
-import org.gtlcore.gtlcore.utils.Registries;
-
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 
+import org.gtlcore.gtlcore.common.data.*;
+import org.gtlcore.gtlcore.common.data.machines.AdvancedMultiBlockMachine;
+import org.gtlcore.gtlcore.utils.Registries;
 import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.api.registries.RTTRecipeBuilder;
 import top.ialdaiaxiariyay.rtt.common.items.RTTItem;
@@ -138,6 +137,5 @@ public class MiscRecipes {
                 .outputItems(RTTItem.URAGIRI_ALICE)
                 .duration(160)
                 .save(provider);
-
     }
 }

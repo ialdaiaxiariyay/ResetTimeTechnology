@@ -1,5 +1,14 @@
 package top.ialdaiaxiariyay.rtt.data.generated;
 
+import net.minecraft.data.CachedOutput;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.DataProvider;
+
+import com.google.gson.JsonObject;
+import com.mojang.math.MethodsReturnNonnullByDefault;
+import top.ialdaiaxiariyay.rtt.RTT;
+import top.ialdaiaxiariyay.rtt.data.generated.lang.*;
+
 import java.nio.file.Path;
 import java.util.Map;
 import java.util.TreeMap;
@@ -8,29 +17,22 @@ import java.util.function.Function;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import com.google.gson.JsonObject;
-import com.mojang.math.MethodsReturnNonnullByDefault;
-
-import net.minecraft.data.CachedOutput;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.DataProvider;
-import top.ialdaiaxiariyay.rtt.RTT;
-import top.ialdaiaxiariyay.rtt.data.generated.lang.*;
-
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public final class LocalizationProvider implements DataProvider {
+
     @FunctionalInterface
     public interface LanguageProcessingStrategy {
+
         void process(JsonObject json);
     }
 
-    private record Language(String en, String cn) {
-    }
+    private record Language(String en, String cn) {}
 
     private static final Map<String, Language> LANGUAGES = new TreeMap<>();
 
     enum LangCode {
+
         EN_US(Language::en),
         ZH_CN(Language::cn);
 
@@ -69,7 +71,6 @@ public final class LocalizationProvider implements DataProvider {
     }
 
     private CompletableFuture<?> save(CachedOutput cache, LangCode code) {
-
         Path path = buildLanguageFilePath(code);
         JsonObject json = new JsonObject();
 
@@ -85,7 +86,7 @@ public final class LocalizationProvider implements DataProvider {
 
     private Path buildLanguageFilePath(LangCode code) {
         return this.generator.getPackOutput().getOutputFolder()
-                .resolve(String.format("assets/"+ RTT.MOD_ID + "/lang/%s.json", code.name().toLowerCase()));
+                .resolve(String.format("assets/" + RTT.MOD_ID + "/lang/%s.json", code.name().toLowerCase()));
     }
 
     @Override

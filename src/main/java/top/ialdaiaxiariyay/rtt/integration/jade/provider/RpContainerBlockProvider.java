@@ -2,6 +2,7 @@ package top.ialdaiaxiariyay.rtt.integration.jade.provider;
 
 import com.gregtechceu.gtceu.integration.jade.provider.CapabilityBlockProvider;
 import com.gregtechceu.gtceu.utils.FormattingUtil;
+
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -10,6 +11,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import snownee.jade.api.BlockAccessor;
@@ -22,6 +24,7 @@ import top.ialdaiaxiariyay.rtt.api.machine.IRPContainer;
 import top.ialdaiaxiariyay.rtt.api.machine.RTTCapabilityHelper;
 
 public class RpContainerBlockProvider extends CapabilityBlockProvider<IRPContainer> {
+
     public RpContainerBlockProvider() {
         super(RTT.id("rp_container_provider"));
     }
@@ -44,9 +47,7 @@ public class RpContainerBlockProvider extends CapabilityBlockProvider<IRPContain
             long stored = capData.getLong("RP");
             IElementHelper helper = tooltip.getElementHelper();
             tooltip.add(helper.progress(this.getProgress(stored, maxStorage), Component.translatable("rtt.jade.rp_stored", FormattingUtil.formatNumbers(stored), FormattingUtil.formatNumbers(maxStorage)),
-              helper.progressStyle().color(-1120768, -1120768).textColor(-1), Util.make(BoxStyle.DEFAULT, (style) -> {
-                style.borderColor = -11184811;
-            }), true));
+                    helper.progressStyle().color(-1120768, -1120768).textColor(-1), Util.make(BoxStyle.DEFAULT, (style) -> style.borderColor = -11184811), true));
         }
     }
 

@@ -29,6 +29,7 @@
   "config.jade.plugin_rtt.rp_container_provider": "[RTT] RP Container Provider",
   "config.jade.plugin_rtt.tick_time_provider": "[RTT] Tick Time",
   "config.rtt.option.COOLDOWN_TICKS": "Set Warp Spindle cooldown",
+  "config.rtt.option.MachineRendered": "Open or Off Machine Rendered",
   "config.screen.gtlcore": "Please restart game after enabling function",
   "config.screen.rtt": "Please restart game after enabling function",
   "gtceu.figure_factory": "Figure Factory",

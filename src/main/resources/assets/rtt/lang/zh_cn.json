@@ -29,6 +29,7 @@
   "config.jade.plugin_rtt.rp_container_provider": "[RTT] RP槽",
   "config.jade.plugin_rtt.tick_time_provider": "[RTT] Tick时间",
   "config.rtt.option.COOLDOWN_TICKS": "设置时空扭曲之钥冷却时间",
+  "config.rtt.option.MachineRendered": "开启或关闭机器渲染",
   "config.screen.gtlcore": "开启功能后请退出游戏重进入",
   "config.screen.rtt": "开启功能后请退出游戏重进入",
   "gtceu.figure_factory": "手办工厂",

@@ -1,7 +1,5 @@
 package top.ialdaiaxiariyay.rtt.api.machine;
 
-import com.gregtechceu.gtceu.api.capability.IEnergyContainer;
-import com.gregtechceu.gtceu.api.capability.forge.GTCapability;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;

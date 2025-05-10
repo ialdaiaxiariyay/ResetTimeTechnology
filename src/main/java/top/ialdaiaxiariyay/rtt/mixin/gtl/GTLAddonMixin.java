@@ -1,9 +1,8 @@
 package top.ialdaiaxiariyay.rtt.mixin.gtl;
 
-import org.gtlcore.gtlcore.GTLGTAddon;
-
 import net.minecraft.data.recipes.FinishedRecipe;
 
+import org.gtlcore.gtlcore.GTLGTAddon;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

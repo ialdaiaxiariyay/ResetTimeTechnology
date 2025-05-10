@@ -1,18 +1,21 @@
 package top.ialdaiaxiariyay.rtt.common.machines.mechanism;
 
-import com.glodblock.github.extendedae.client.render.EAEHighlightHandler;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.machine.feature.IFancyUIMachine;
+
 import com.lowdragmc.lowdraglib.gui.util.ClickData;
 import com.lowdragmc.lowdraglib.gui.widget.*;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.HoverEvent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
+
+import com.glodblock.github.extendedae.client.render.EAEHighlightHandler;
 import org.jetbrains.annotations.NotNull;
 import top.ialdaiaxiariyay.rtt.common.dimensions.RTTDimensions;
 

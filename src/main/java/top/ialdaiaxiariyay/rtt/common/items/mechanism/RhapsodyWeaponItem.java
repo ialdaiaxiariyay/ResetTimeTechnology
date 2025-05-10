@@ -2,7 +2,7 @@ package top.ialdaiaxiariyay.rtt.common.items.mechanism;
 
 import com.gregtechceu.gtceu.api.item.ComponentItem;
 import com.gregtechceu.gtceu.api.item.component.*;
-import com.hepdd.gtmthings.utils.TeamUtil;
+
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -25,6 +25,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.*;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.PacketDistributor;
+
+import com.hepdd.gtmthings.utils.TeamUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.ialdaiaxiariyay.rtt.api.rhythmsource.RhythmSourceManager;
@@ -50,8 +52,7 @@ public class RhapsodyWeaponItem extends ComponentItem {
         super(properties);
         attachComponents(
                 new AttackModeComponent(),
-                new ModeDisplayComponent()
-        );
+                new ModeDisplayComponent());
     }
 
     // region 攻击模式组件
@@ -84,11 +85,12 @@ public class RhapsodyWeaponItem extends ComponentItem {
 
     // region 模式显示组件
     private static class ModeDisplayComponent implements IAddInformation, IItemComponent {
+
         @Override
         public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
             boolean isAdvanced = getAttackMode(stack);
             Component modeText = Component.translatable(isAdvanced ?
-                            "tooltip.rtt.mode.advanced" : "tooltip.rtt.mode.normal")
+                    "tooltip.rtt.mode.advanced" : "tooltip.rtt.mode.normal")
                     .withStyle(isAdvanced ? ChatFormatting.LIGHT_PURPLE : ChatFormatting.AQUA);
 
             tooltip.add(Component.translatable("tooltip.rtt.mode.title")
@@ -222,11 +224,11 @@ public class RhapsodyWeaponItem extends ComponentItem {
     private void syncBeamEffect(ServerLevel level, Player player, Vec3 endPos) {
         NetworkHandler.CHANNEL.send(
                 PacketDistributor.TRACKING_ENTITY_AND_SELF.with(() -> player),
-                new BeamPacket(player.getEyePosition(1.0f), endPos)
-        );
+                new BeamPacket(player.getEyePosition(1.0f), endPos));
     }
 
     public static class BeamPacket {
+
         private final Vec3 start;
         private final Vec3 end;
 
@@ -247,8 +249,7 @@ public class RhapsodyWeaponItem extends ComponentItem {
         public static BeamPacket decode(FriendlyByteBuf buffer) {
             return new BeamPacket(
                     new Vec3(buffer.readDouble(), buffer.readDouble(), buffer.readDouble()),
-                    new Vec3(buffer.readDouble(), buffer.readDouble(), buffer.readDouble())
-            );
+                    new Vec3(buffer.readDouble(), buffer.readDouble(), buffer.readDouble()));
         }
 
         public static void handle(BeamPacket packet, Supplier<NetworkEvent.Context> ctx) {
@@ -285,16 +286,14 @@ public class RhapsodyWeaponItem extends ComponentItem {
                 player, start, end,
                 new AABB(start, end).inflate(1.0),
                 e -> !e.isSpectator() && e.isPickable(),
-                range * range
-        );
+                range * range);
         if (entityHit != null) return entityHit;
 
         return player.level().clip(new ClipContext(
                 start, end,
                 ClipContext.Block.COLLIDER,
                 ClipContext.Fluid.NONE,
-                player
-        ));
+                player));
     }
 
     private UUID getNetworkUUID(Player player) {
@@ -304,8 +303,7 @@ public class RhapsodyWeaponItem extends ComponentItem {
     private void warnInsufficientRP(Player player) {
         player.sendSystemMessage(
                 Component.translatable("msg.rtt.insufficient_rp")
-                        .withStyle(ChatFormatting.RED)
-        );
+                        .withStyle(ChatFormatting.RED));
     }
     // endregion
 }

@@ -1,8 +1,5 @@
 package top.ialdaiaxiariyay.rtt.common.machines.machines;
 
-import org.gtlcore.gtlcore.GTLCore;
-import org.gtlcore.gtlcore.common.data.GTLBlocks;
-
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
@@ -18,6 +15,8 @@ import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
+import org.gtlcore.gtlcore.GTLCore;
+import org.gtlcore.gtlcore.common.data.GTLBlocks;
 import top.ialdaiaxiariyay.rtt.api.registries.RTTRegistration;
 import top.ialdaiaxiariyay.rtt.common.data.GetRegistries;
 import top.ialdaiaxiariyay.rtt.common.data.RTTCreativeModeTabs;

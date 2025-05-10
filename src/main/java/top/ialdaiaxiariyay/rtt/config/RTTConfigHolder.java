@@ -21,6 +21,10 @@ public class RTTConfigHolder {
     }
 
     @Configurable
-    @Configurable.Comment({"Set the cooldown time of Warp Spindle in Ticks"})
+    @Configurable.Comment({ "Set the cooldown time of Warp Spindle in Ticks" })
     public int COOLDOWN_TICKS = 10;
+
+    @Configurable
+    @Configurable.Comment({ "Open or Off Machine in Rendered" })
+    public boolean MachineRendered = true;
 }

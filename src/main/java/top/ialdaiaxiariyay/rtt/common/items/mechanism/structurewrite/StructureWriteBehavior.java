@@ -1,7 +1,5 @@
 package top.ialdaiaxiariyay.rtt.common.items.mechanism.structurewrite;
 
-import org.gtlcore.gtlcore.api.pattern.DebugBlockPattern;
-
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.item.ComponentItem;
 import com.gregtechceu.gtceu.api.item.component.IItemUIFactory;
@@ -31,6 +29,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 
 import com.google.common.base.Joiner;
+import org.gtlcore.gtlcore.api.pattern.DebugBlockPattern;
 import top.ialdaiaxiariyay.rtt.RTT;
 
 import java.io.BufferedWriter;

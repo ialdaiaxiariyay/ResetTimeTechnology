@@ -1,6 +1,5 @@
 package top.ialdaiaxiariyay.rtt.api.machine;
 
-import com.gregtechceu.gtceu.api.capability.IEnergyContainer;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.CapabilityToken;
@@ -10,6 +9,7 @@ public class RTTCapability {
 
     public static final Capability<IRPContainer> CAPABILITY_LRP = CapabilityManager.get(new CapabilityToken<>() {});
     public static final Capability<IRPContainer> CAPABILITY_RP_CONTAINER = CapabilityManager.get(new CapabilityToken<>() {});
+
     public RTTCapability() {}
 
     public static void register(RegisterCapabilitiesEvent event) {
