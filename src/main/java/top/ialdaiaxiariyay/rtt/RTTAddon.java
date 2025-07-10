@@ -12,6 +12,7 @@ import top.ialdaiaxiariyay.rtt.api.registries.RTTRegistration;
 import top.ialdaiaxiariyay.rtt.common.data.RTTBlocks;
 import top.ialdaiaxiariyay.rtt.common.data.RTTItem;
 import top.ialdaiaxiariyay.rtt.common.data.materials.RTTElements;
+import top.ialdaiaxiariyay.rtt.data.recipe.AddRecips;
 
 import java.util.function.Consumer;
 
@@ -56,5 +57,7 @@ public class RTTAddon implements IGTAddon {
     }
 
     @Override
-    public void addRecipes(Consumer<FinishedRecipe> provider) {}
+    public void addRecipes(Consumer<FinishedRecipe> provider) {
+        AddRecips.init(provider);
+    }
 }

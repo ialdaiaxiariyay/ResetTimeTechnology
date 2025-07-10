@@ -24,6 +24,7 @@
   "block.rtt.rhythm_source_output_energy": "Rhythm Source Output(Energy)",
   "block.rtt.rhythm_source_output_laser": "Rhythm Source Output(Laser)",
   "block.rtt.void_world_block": "Void World Block",
+  "config.jade.plugin_rtt.recipe_logic_provider": "[RTT] Recipe Logic",
   "config.jade.plugin_rtt.rp_container_provider": "[RTT] RP Container Provider",
   "config.rtt.option.COOLDOWN_TICKS": "Set Warp Spindle cooldown",
   "config.rtt.option.MachineRendered": "Open or Off Machine Rendered",

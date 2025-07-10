@@ -20,6 +20,7 @@ import snownee.jade.api.config.IPluginConfig;
 import snownee.jade.api.ui.BoxStyle;
 import snownee.jade.api.ui.IElementHelper;
 import top.ialdaiaxiariyay.rtt.RTT;
+import top.ialdaiaxiariyay.rtt.api.machine.IRPContainer;
 import top.ialdaiaxiariyay.rtt.api.machine.RTTCapabilityHelper;
 
 public class RpContainerBlockProvider extends CapabilityBlockProvider<IRPContainer> {

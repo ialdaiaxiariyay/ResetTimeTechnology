@@ -3,8 +3,13 @@ package top.ialdaiaxiariyay.rtt.data.recipe;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 
+import com.gregtechceu.gtceu.common.data.GTMachines;
+import com.gregtechceu.gtceu.common.data.machines.GTResearchMachines;
+import com.gregtechceu.gtceu.common.machine.storage.CreativeChestMachine;
+import com.hepdd.gtmthings.data.CreativeMachines;
 import net.minecraft.data.recipes.FinishedRecipe;
 
+import net.minecraft.world.item.Items;
 import org.gtlcore.gtlcore.common.data.*;
 import org.gtlcore.gtlcore.common.data.machines.AdvancedMultiBlockMachine;
 import org.gtlcore.gtlcore.utils.Registries;
@@ -43,13 +48,14 @@ public class MiscRecipes {
                 .EUt(GTValues.VEX[GTValues.MAX] * 443)
                 .save(provider);
 
-        FIGURE_FACTORY.recipeBuilder(RTT.id("fishbig"))
-                .inputItems(TagPrefix.foil, GTLMaterials.Shirabon, 169472)
-                .inputItems(TagPrefix.foil, GTLMaterials.Cosmic, 169472)
-                .inputItems(TagPrefix.foil, GTLMaterials.Eternity, 169472)
-                .inputItems(TagPrefix.foil, GTLMaterials.CosmicNeutronium, 169472)
-                .inputItems(TagPrefix.foil, GTLMaterials.MagnetohydrodynamicallyConstrainedStarMatter, 169472)
-                .inputItems(Registries.getItem("kubejs:two_way_foil"), 169472)
+        new RTTRecipeBuilder(RTT.id("fishbig"), FIGURE_FACTORY)
+                .RPt(GTValues.VEX[GTValues.MAX] * 65536)
+                .inputItems(TagPrefix.foil, GTLMaterials.Shirabon, 154048)
+                .inputItems(TagPrefix.foil, GTLMaterials.Cosmic, 152512)
+                .inputItems(TagPrefix.foil, GTLMaterials.Eternity, 152512)
+                .inputItems(TagPrefix.foil, GTLMaterials.CosmicNeutronium, 152512)
+                .inputItems(TagPrefix.foil, GTLMaterials.MagnetohydrodynamicallyConstrainedStarMatter, 152512)
+                .inputItems(Registries.getItem("kubejs:two_way_foil"), 152512)
                 .inputItems(TagPrefix.plate, GTLMaterials.Cosmic, 33792)
                 .inputItems(TagPrefix.plateDouble, GTLMaterials.Cosmic, 320)
                 .inputItems(TagPrefix.rodLong, GTLMaterials.Cosmic, 33792)
@@ -58,20 +64,27 @@ public class MiscRecipes {
                 .inputItems(TagPrefix.rodLong, GTLMaterials.TranscendentMetal, 33792)
                 .inputItems(TagPrefix.frameGt, GTLMaterials.MagnetohydrodynamicallyConstrainedStarMatter, 33792)
                 .inputItems(TagPrefix.frameGt, GTLMaterials.Infinity, 33792)
-                .inputItems(Registries.getItem("gtceu:eternity_nanoswarm"), 33792)
                 .inputItems(GTLBlocks.calmap.get(14), 128)
-                .inputItems(Registries.getItem("gtceu:max_buffer"), 128)
                 .inputItems(GTLBlocks.INFINITY_GLASS, 64)
                 .inputItems(AdvancedMultiBlockMachine.CREATE_COMPUTATION, 64)
                 .inputItems(AdvancedMultiBlockMachine.CREATE_AGGREGATION, 64)
+                .inputItems(CreativeMachines.CREATIVE_LASER_INPUT_HATCH, 8)
+                .inputItems(GTResearchMachines.CREATIVE_DATA_ACCESS_HATCH,8)
+                .inputItems(Registries.getItem("gtceu:max_buffer"), 64)
                 .inputItems(GTLItems.SENSOR_MAX, 64)
-                .inputItems(Registries.getItem("avaritia:singularity"), 4)
-                .inputFluids(GTLMaterials.Shirabon.getFluid(9732096))
+                .inputItems(Registries.getItem("kubejs:hyper_stable_self_healing_adhesive"), 1536)
+                .inputItems(Registries.getItem("kubejs:cosmic_fabric"), 768)
+                .inputItems(Registries.getItem("kubejs:chain_command_block_core"), 192)
+                .inputItems(Registries.getItem("gtlcore:compressed_pufferfish"), 32)
+                .inputFluids(GTLMaterials.PrimordialMatter.getFluid(24000000))
+                .inputFluids(GTLMaterials.Infinity.getFluid(24000000))
+                .inputFluids(GTLMaterials.Miracle.getFluid(24000000))
+                .inputFluids(GTLMaterials.SuperMutatedLivingSolder.getFluid(24000000))
                 .inputFluids(GTLMaterials.Eternity.getFluid(110592))
                 .inputFluids(GTLMaterials.TranscendentMetal.getFluid(18432))
-                .outputItems(Registries.getItem("expatternprovider:fishbig"), 2)
-                .duration(1600)
-                .EUt(GTValues.VEX[GTValues.MAX] * 16384)
+                .inputFluids(GTLMaterials.Shirabon.getFluid(9492480))
+                .outputItems(Registries.getItem("expatternprovider:fishbig"), 4)
+                .duration(1200)
                 .save(provider);
 
         new RTTRecipeBuilder(RTT.id("star_trip"), MULTIVERSE_INFORMATION_COLLECTOR)

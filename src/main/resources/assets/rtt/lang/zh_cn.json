@@ -24,6 +24,7 @@
   "block.rtt.rhythm_source_output_energy": "输出型韵律源点接口(能源仓)",
   "block.rtt.rhythm_source_output_laser": "输出型韵律源点接口(激光仓)",
   "block.rtt.void_world_block": "虚空世界方块",
+  "config.jade.plugin_rtt.recipe_logic_provider": "[RTT] 配方信息",
   "config.jade.plugin_rtt.rp_container_provider": "[RTT] RP槽",
   "config.rtt.option.COOLDOWN_TICKS": "设置时空扭曲之钥冷却时间",
   "config.rtt.option.MachineRendered": "开启或关闭机器渲染",

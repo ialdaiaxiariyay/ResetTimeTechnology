@@ -13,7 +13,7 @@ public class RTTRecipeTypes {
     public static void init() {}
 
     public final static GTRecipeType FIGURE_FACTORY = register("figure_factory", MULTIBLOCK)
-            .setMaxIOSize(24, 1, 12, 0)
+            .setMaxIOSize(36, 1, 12, 0)
             .setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.MOTOR);

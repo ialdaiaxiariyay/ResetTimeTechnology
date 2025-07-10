@@ -22,12 +22,13 @@ import org.jetbrains.annotations.Nullable;
 import snownee.jade.api.BlockAccessor;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
+import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.api.recipe.RTTRecipeHelper;
 
 public class RecipeLogicProvider extends CapabilityBlockProvider<RecipeLogic> {
 
     public RecipeLogicProvider() {
-        super(GTCEu.id("recipe_logic_provider"));
+        super(RTT.id("recipe_logic_provider"));
     }
 
     @Nullable

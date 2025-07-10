@@ -2,7 +2,7 @@
   "hoshi_no_umi": {
     "sounds": [
       {
-        "name": "rtt:hoshi_no_umi",
+        "name": "rtt.hoshi_no_umi",
         "stream": true
       }
     ]
@@ -10,7 +10,7 @@
   "a_place_in_the_sunshine": {
     "sounds": [
       {
-        "name": "rtt:a_place_in_the_sunshine",
+        "name": "rtt.a_place_in_the_sunshine",
         "stream": true
       }
     ]
@@ -18,7 +18,7 @@
   "star_trip": {
     "sounds": [
       {
-        "name": "rtt:star_trip",
+        "name": "rtt.star_trip",
         "stream": true
       }
     ]
@@ -26,7 +26,7 @@
   "yi_lirile": {
     "sounds": [
       {
-        "name": "rtt:yi_lirile",
+        "name": "rtt.yi_lirile",
         "stream": false
       }
     ]
@@ -34,7 +34,7 @@
   "harm_stimuli": {
     "sounds": [
       {
-        "name": "rtt:harm_stimuli",
+        "name": "rtt.harm_stimuli",
         "stream": true
       }
     ]
@@ -42,7 +42,7 @@
   "harmonious": {
     "sounds": [
       {
-        "name": "rtt:harmonious",
+        "name": "rtt.harmonious",
         "stream": true
       }
     ]
@@ -50,7 +50,7 @@
   "resuscitated_hope": {
     "sounds": [
       {
-        "name": "rtt:resuscitated_hope",
+        "name": "rtt.resuscitated_hope",
         "stream": true
       }
     ]
@@ -58,7 +58,7 @@
   "uragiri_alice": {
     "sounds": [
       {
-        "name": "rtt:uragiri_alice",
+        "name": "rtt.uragiri_alice",
         "stream": true
       }
     ]
