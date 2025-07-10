@@ -10,7 +10,6 @@ import net.minecraft.network.chat.Component;
 import com.hepdd.gtmthings.GTMThings;
 import top.ialdaiaxiariyay.rtt.api.registries.RTTRegistration;
 import top.ialdaiaxiariyay.rtt.common.data.RTTCreativeModeTabs;
-import top.ialdaiaxiariyay.rtt.common.machines.mechanism.PerformanceMonitorMachine;
 import top.ialdaiaxiariyay.rtt.common.machines.mechanism.RhythmSourceInterface;
 import top.ialdaiaxiariyay.rtt.common.machines.mechanism.RhythmSourceMonitor;
 import top.ialdaiaxiariyay.rtt.common.machines.mechanism.WirelessRPHatchPartMachine;
@@ -30,15 +29,6 @@ public class RTTSamllMachines {
             .workableTieredHullRenderer(GTMThings.id("block/machines/wireless_energy_monitor"))
             .tier(14)
             .tooltips(Component.translatable("block.rtt.rhythm_source_monitor.tooltip"))
-            .register();
-
-    public static final MachineDefinition PERFORMANCE_MONITOR = RTTRegistration.REGISTRATE
-            .machine("performance_monitor", PerformanceMonitorMachine::new)
-            .rotationState(RotationState.NON_Y_AXIS)
-            .compassNodeSelf()
-            .workableTieredHullRenderer(GTMThings.id("block/machines/wireless_energy_monitor"))
-            .tier(14)
-            .tooltips(Component.translatable("block.rtt.performance_monitor.tooltip"))
             .register();
 
     public static final MachineDefinition RHYTHM_SOURCE_INTERFACE = RTTRegistration.REGISTRATE

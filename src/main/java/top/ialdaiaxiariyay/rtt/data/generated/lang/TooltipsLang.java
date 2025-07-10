@@ -50,9 +50,6 @@ public class TooltipsLang {
         add("rtt.record.1", "Music Name:", "音乐名称：");
         add("rtt.debug_structure_writer.0", "Created by time", "按时间创建");
         add("rtt.debug_structure_writer.1", "The file is exported in logs/rtt", "文件将导出到 logs/rtt 中");
-        add("rtt.me_any", "ME hatch allows connection from any side.", "ME仓允许任意面连接");
-        add("rtt.me_front", "ME hatch only allows connection from the front side.", "ME仓只允许正面连接");
-        add("block.rtt.performance_monitor.tooltip", "Can monitor the average latency of all machines within 2 seconds and support highlighting.", "能监测全部机器2秒内的平均延迟，并支持高亮显示。");
         add("rtt.jade.rp_stored", "%d / %d RP", "%d / %d RP");
     }
 }

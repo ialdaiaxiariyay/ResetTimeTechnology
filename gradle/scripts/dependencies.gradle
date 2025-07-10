@@ -22,6 +22,9 @@ dependencies {
     implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:$project.mixinextras_version"))
     implementation(include("io.github.llamalad7:mixinextras-forge:$project.mixinextras_version"))
 
+    compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:0.3.3"))
+    implementation(include("com.github.bawnorton.mixinsquared:mixinsquared-forge:0.3.3"))
+
     // lombok
     compileOnly 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
@@ -38,15 +41,14 @@ dependencies {
     modImplementation("earth.terrarium.botarium:botarium-forge-${project.minecraft_version}:${project.botarium_version}")
     modImplementation("earth.terrarium.adastra:ad_astra-forge-${project.minecraft_version}:${ad_astra_version}") { transitive false }
 
-    modImplementation("dev:gtmthings-1.3.4")
-
     modImplementation("dev:constructionwand-1.20.1-2.11")
     modImplementation("dev:worldedit-mod-7.2.15")
 
-    modImplementation("dev:gtmthings-1.3.4")
+    modImplementation("dev:gtmthings-1.3.5.b")
 
-    modImplementation("dev:gtlcore-1.1.1-build_8")
-    modImplementation("dev:gtladditions-1.0.4_bulid_2")
+    modImplementation("dev:gtlcore-1.2.1.8")
+    modImplementation("dev:gtladditions-2.0")
+    modImplementation("dev:kotlinforforge-4.11.0-all")
 
     modImplementation("curse.maven:glodium-957920:5006780")
     modImplementation("dev:ExtendedAE-1.20-1.1.12-forge")

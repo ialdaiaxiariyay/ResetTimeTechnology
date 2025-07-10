@@ -1,7 +1,7 @@
 package top.ialdaiaxiariyay.rtt.mixin.gtl;
 
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
-import com.mojang.blaze3d.vertex.PoseStack;
+
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -9,6 +9,8 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.client.model.data.ModelData;
+
+import com.mojang.blaze3d.vertex.PoseStack;
 import org.gtlcore.gtlcore.GTLCore;
 import org.gtlcore.gtlcore.client.ClientUtil;
 import org.gtlcore.gtlcore.client.renderer.machine.EyeOfHarmonyRenderer;
@@ -25,31 +27,32 @@ import java.util.List;
 
 import static org.gtlcore.gtlcore.client.renderer.machine.EyeOfHarmonyRenderer.STAR_MODEL;
 
-@Mixin({EyeOfHarmonyRenderer.class})
+@Mixin({ EyeOfHarmonyRenderer.class })
 public class EyeOfHarmonyRendererMixin {
+
     @Inject(method = "render", at = @At(value = "HEAD"), remap = false, cancellable = true)
     private void render(BlockEntity blockEntity, float partialTicks, PoseStack poseStack, MultiBufferSource buffer,
                         int combinedLight, int combinedOverlay, CallbackInfo ci) {
-                        if (RTTConfigHolder.INSTANCE.MachineRendered){
-                            if (blockEntity instanceof IMachineBlockEntity machineBlockEntity &&
-                                    machineBlockEntity.getMetaMachine() instanceof HarmonyMachine machine && machine.isActive()) {
-                                float tick = machine.getOffsetTimer() + partialTicks;
-                                double x = 0.5, y = 0.5, z = 0.5;
-                                switch (machine.getFrontFacing()) {
-                                    case NORTH -> z = 16.5;
-                                    case SOUTH -> z = -15.5;
-                                    case WEST -> x = 16.5;
-                                    case EAST -> x = -15.5;
-                                }
-                                poseStack.pushPose();
-                                poseStack.translate(x, y, z);
-                                rtt$renderStar(tick, poseStack, buffer);
-                                rtt$renderOrbitObjects(tick, poseStack, buffer, x, y, z);
-                                rtt$renderOuterSpaceShell(poseStack, buffer);
-                                poseStack.popPose();
-                            }
-                        }
-                        ci.cancel();
+        if (RTTConfigHolder.INSTANCE.MachineRendered) {
+            if (blockEntity instanceof IMachineBlockEntity machineBlockEntity &&
+                    machineBlockEntity.getMetaMachine() instanceof HarmonyMachine machine && machine.isActive()) {
+                float tick = machine.getOffsetTimer() + partialTicks;
+                double x = 0.5, y = 0.5, z = 0.5;
+                switch (machine.getFrontFacing()) {
+                    case NORTH -> z = 16.5;
+                    case SOUTH -> z = -15.5;
+                    case WEST -> x = 16.5;
+                    case EAST -> x = -15.5;
+                }
+                poseStack.pushPose();
+                poseStack.translate(x, y, z);
+                rtt$renderStar(tick, poseStack, buffer);
+                rtt$renderOrbitObjects(tick, poseStack, buffer, x, y, z);
+                rtt$renderOuterSpaceShell(poseStack, buffer);
+                poseStack.popPose();
+            }
+        }
+        ci.cancel();
     }
 
     @Unique
@@ -68,6 +71,7 @@ public class EyeOfHarmonyRendererMixin {
         ClientUtil.modelRenderer().renderModel(poseStack.last(), buffer.getBuffer(RenderType.translucent()), null, ClientUtil.getBakedModel(STAR_MODEL), 1.0F, 1.0F, 1.0F, LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY, ModelData.EMPTY, RenderType.translucent());
         poseStack.popPose();
     }
+
     @Unique
     private void rtt$renderOrbitObjects(float tick, PoseStack poseStack, MultiBufferSource buffer, double x, double y, double z) {
         for (int a = 1; a < 4; a++) {
@@ -80,6 +84,7 @@ public class EyeOfHarmonyRendererMixin {
             poseStack.popPose();
         }
     }
+
     @Unique
     private void rtt$renderOuterSpaceShell(PoseStack poseStack, MultiBufferSource buffer) {
         float scale = 0.01F * 17.5F;

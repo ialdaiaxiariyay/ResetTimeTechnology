@@ -35,23 +35,23 @@ public class MultiverseInformationCollector extends WorkableCasingMachineRendere
     @OnlyIn(Dist.CLIENT)
     public void render(BlockEntity blockEntity, float partialTicks, PoseStack poseStack, MultiBufferSource buffer,
                        int combinedLight, int combinedOverlay) {
-                       if(RTTConfigHolder.INSTANCE.MachineRendered){
-        if (blockEntity instanceof IMachineBlockEntity machineBlockEntity &&
-                machineBlockEntity.getMetaMachine() instanceof WorkableElectricMultiblockMachine machine && machine.isActive()) {
-            float tick = machine.getOffsetTimer() + partialTicks;
-            double x = 0.5, y = 158.5, z = 0.5;
-            switch (machine.getFrontFacing()) {
-                case NORTH -> z = 11.5;
-                case SOUTH -> z = -10.5;
-                case WEST -> x = 11.5;
-                case EAST -> x = -10.5;
+        if (RTTConfigHolder.INSTANCE.MachineRendered) {
+            if (blockEntity instanceof IMachineBlockEntity machineBlockEntity &&
+                    machineBlockEntity.getMetaMachine() instanceof WorkableElectricMultiblockMachine machine && machine.isActive()) {
+                float tick = machine.getOffsetTimer() + partialTicks;
+                double x = 0.5, y = 158.5, z = 0.5;
+                switch (machine.getFrontFacing()) {
+                    case NORTH -> z = 11.5;
+                    case SOUTH -> z = -10.5;
+                    case WEST -> x = 11.5;
+                    case EAST -> x = -10.5;
+                }
+                poseStack.pushPose();
+                poseStack.translate(x, y, z);
+                renderStar(tick, poseStack, buffer);
+                poseStack.popPose();
             }
-            poseStack.pushPose();
-            poseStack.translate(x, y, z);
-            renderStar(tick, poseStack, buffer);
-            poseStack.popPose();
         }
-                       }
     }
 
     @OnlyIn(Dist.CLIENT)

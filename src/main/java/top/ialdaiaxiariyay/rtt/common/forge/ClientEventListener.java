@@ -20,7 +20,6 @@ import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.client.model.obj.ObjLoader;
 import net.minecraftforge.event.RegisterCommandsEvent;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -34,7 +33,6 @@ import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.api.rhythmsource.RhythmSourceSavedData;
 import top.ialdaiaxiariyay.rtt.common.commands.RTTCommands;
 import top.ialdaiaxiariyay.rtt.common.items.mechanism.structurewrite.StructureWriteBehavior;
-import top.ialdaiaxiariyay.rtt.common.machines.mechanism.PerformanceMonitorMachine;
 
 @Mod.EventBusSubscriber(modid = RTT.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ClientEventListener {
@@ -136,12 +134,5 @@ public class ClientEventListener {
     @SubscribeEvent
     public static void onCommandRegister(@NotNull RegisterCommandsEvent event) {
         RTTCommands.init(event.getDispatcher());
-    }
-
-    @SubscribeEvent
-    public static void onServerTickEvent(TickEvent.@NotNull ServerTickEvent event) {
-        if (event.phase == TickEvent.Phase.START) {
-            PerformanceMonitorMachine.observe = false;
-        }
     }
 }

@@ -2,13 +2,15 @@ package top.ialdaiaxiariyay.rtt.mixin.gtl;
 
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
-import com.mojang.blaze3d.vertex.PoseStack;
+
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.client.model.data.ModelData;
+
+import com.mojang.blaze3d.vertex.PoseStack;
 import org.gtlcore.gtlcore.client.ClientUtil;
 import org.gtlcore.gtlcore.client.renderer.machine.AnnihilateGeneratorRenderer;
 import org.joml.Quaternionf;
@@ -21,28 +23,29 @@ import top.ialdaiaxiariyay.rtt.config.RTTConfigHolder;
 
 import static org.gtlcore.gtlcore.client.renderer.machine.EyeOfHarmonyRenderer.STAR_MODEL;
 
-@Mixin({AnnihilateGeneratorRenderer.class})
+@Mixin({ AnnihilateGeneratorRenderer.class })
 public class AnnihilateGeneratorRendererMixin {
+
     @Inject(method = "render", at = @At(value = "HEAD"), remap = false, cancellable = true)
     private void render(BlockEntity blockEntity, float partialTicks, PoseStack poseStack, MultiBufferSource buffer,
                         int combinedLight, int combinedOverlay, CallbackInfo ci) {
-                        if(RTTConfigHolder.INSTANCE.MachineRendered){
-                            if (blockEntity instanceof IMachineBlockEntity machineBlockEntity &&
-                                    machineBlockEntity.getMetaMachine() instanceof WorkableElectricMultiblockMachine machine && machine.isActive()) {
-                                float tick = machine.getOffsetTimer() + partialTicks;
-                                double x = 0.5, y = 36.5, z = 0.5;
-                                switch (machine.getFrontFacing()) {
-                                    case NORTH -> z = 39.5;
-                                    case SOUTH -> z = -38.5;
-                                    case WEST -> x = 39.5;
-                                    case EAST -> x = -38.5;
-                                }
-                                poseStack.pushPose();
-                                poseStack.translate(x, y, z);
-                                rtt$renderStar(tick, poseStack, buffer);
-                                poseStack.popPose();
-                            }
-                        }
+        if (RTTConfigHolder.INSTANCE.MachineRendered) {
+            if (blockEntity instanceof IMachineBlockEntity machineBlockEntity &&
+                    machineBlockEntity.getMetaMachine() instanceof WorkableElectricMultiblockMachine machine && machine.isActive()) {
+                float tick = machine.getOffsetTimer() + partialTicks;
+                double x = 0.5, y = 36.5, z = 0.5;
+                switch (machine.getFrontFacing()) {
+                    case NORTH -> z = 39.5;
+                    case SOUTH -> z = -38.5;
+                    case WEST -> x = 39.5;
+                    case EAST -> x = -38.5;
+                }
+                poseStack.pushPose();
+                poseStack.translate(x, y, z);
+                rtt$renderStar(tick, poseStack, buffer);
+                poseStack.popPose();
+            }
+        }
         ci.cancel();
     }
 
