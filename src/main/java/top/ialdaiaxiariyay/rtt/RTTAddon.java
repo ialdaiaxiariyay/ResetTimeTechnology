@@ -9,9 +9,9 @@ import net.minecraft.data.recipes.FinishedRecipe;
 
 import top.ialdaiaxiariyay.rtt.api.recipe.RTTRecipeCapabilities;
 import top.ialdaiaxiariyay.rtt.api.registries.RTTRegistration;
-import top.ialdaiaxiariyay.rtt.common.blocks.RTTBlocks;
-import top.ialdaiaxiariyay.rtt.common.items.RTTItem;
-import top.ialdaiaxiariyay.rtt.common.materials.RTTElements;
+import top.ialdaiaxiariyay.rtt.common.data.RTTBlocks;
+import top.ialdaiaxiariyay.rtt.common.data.RTTItem;
+import top.ialdaiaxiariyay.rtt.common.data.materials.RTTElements;
 
 import java.util.function.Consumer;
 

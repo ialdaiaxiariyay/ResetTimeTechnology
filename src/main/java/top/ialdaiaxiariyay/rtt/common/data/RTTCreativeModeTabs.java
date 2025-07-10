@@ -5,9 +5,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.api.registries.RTTRegistration;
-import top.ialdaiaxiariyay.rtt.common.blocks.RTTBlocks;
-import top.ialdaiaxiariyay.rtt.common.items.RTTItem;
-import top.ialdaiaxiariyay.rtt.common.machines.machines.RTTMachines;
+import top.ialdaiaxiariyay.rtt.common.data.machines.RTTMachines;
 
 import static com.gregtechceu.gtceu.common.data.GTCreativeModeTabs.*;
 

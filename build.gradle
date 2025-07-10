@@ -2,6 +2,7 @@ plugins {
     id "dev.architectury.loom" version "1.6-SNAPSHOT"
     id "maven-publish"
     id "com.diffplug.spotless" version "6.25.0"
+    id 'org.jetbrains.kotlin.jvm'
 }
 
 base {
@@ -13,7 +14,6 @@ version = "${mod_version}" + (buildNumber != null ? "-build_${System.getenv("GIT
 group = project.maven_group
 
 java {
-    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -58,3 +58,12 @@ apply from: "$rootDir/gradle/scripts/dependencies.gradle"
 apply from: "$rootDir/gradle/scripts/jars.gradle"
 apply from: "$rootDir/gradle/scripts/processResources.gradle"
 apply from: "$rootDir/gradle/scripts/spotless.gradle"
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+}
+kotlin {
+    jvmToolchain(17)
+}

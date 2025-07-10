@@ -48,7 +48,7 @@ dependencies {
 
     modImplementation("dev:gtlcore-1.2.1.8")
     modImplementation("dev:gtladditions-2.0")
-    modImplementation("dev:kotlinforforge-4.11.0-all")
+    include(modImplementation("dev:kotlinforforge-4.11.0-all"))
 
     modImplementation("curse.maven:glodium-957920:5006780")
     modImplementation("dev:ExtendedAE-1.20-1.1.12-forge")

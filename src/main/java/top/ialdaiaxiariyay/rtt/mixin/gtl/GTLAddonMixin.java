@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import top.ialdaiaxiariyay.rtt.common.data.recipe.AddRecips;
+import top.ialdaiaxiariyay.rtt.data.recipe.AddRecips;
 
 import java.util.function.Consumer;
 
