@@ -1,6 +1,5 @@
 package top.ialdaiaxiariyay.rtt.integration.jade.provider;
 
-import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.GTCapabilityHelper;
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;

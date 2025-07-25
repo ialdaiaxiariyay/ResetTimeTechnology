@@ -30,8 +30,8 @@ import com.hepdd.gtmthings.utils.TeamUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.ialdaiaxiariyay.rtt.api.rhythmsource.RhythmSourceManager;
-import top.ialdaiaxiariyay.rtt.forge.NetworkHandler;
 import top.ialdaiaxiariyay.rtt.config.RTTConfigHolder;
+import top.ialdaiaxiariyay.rtt.forge.NetworkHandler;
 
 import java.util.List;
 import java.util.UUID;
@@ -47,6 +47,7 @@ public class RhapsodyWeaponItem extends ComponentItem {
     private static final double MELEE_RATIO = 1850.0;
     private static final int BEAM_PARTICLES = 150;
     private static final float BEAM_WIDTH = 0.3f;
+    private static final double range = 64.0f;
 
     public RhapsodyWeaponItem(Properties properties) {
         super(properties);
@@ -131,7 +132,7 @@ public class RhapsodyWeaponItem extends ComponentItem {
     // region 攻击实现
     private void performRangedAttack(Level level, Player player, ItemStack stack) {
         if (!level.isClientSide) {
-            HitResult hit = enhancedRaycast(player, 64.0);
+            HitResult hit = enhancedRaycast(player, range);
             if (hit.getType() == HitResult.Type.ENTITY) {
                 Entity target = ((EntityHitResult) hit).getEntity();
                 if (target instanceof LivingEntity livingTarget) {

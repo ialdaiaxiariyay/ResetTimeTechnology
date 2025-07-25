@@ -46,7 +46,7 @@ dependencies {
 
     modImplementation("dev:gtmthings-1.3.5.b")
 
-    modImplementation("dev:gtlcore-1.2.1.8")
+    modImplementation("dev:gtlcore-1.2.2.0")
     modImplementation("dev:gtladditions-2.0")
     include(modImplementation("dev:kotlinforforge-4.11.0-all"))
 

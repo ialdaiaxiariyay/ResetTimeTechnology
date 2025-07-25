@@ -49,5 +49,12 @@ public class TooltipsLang {
         add("rtt.debug_structure_writer.0", "Created by time", "按时间创建");
         add("rtt.debug_structure_writer.1", "The file is exported in logs/rtt", "文件将导出到 logs/rtt 中");
         add("rtt.jade.rp_stored", "%d / %d RP", "%d / %d RP");
+        add("rtt.machine.eye_of_harmony.tooltip.0", "Now, the Eye of Harmony can generate power", "现在，鸿蒙之眼能够产出电力");
+        add("rtt.machine.eye_of_harmony.tooltip.1", "For details, refer to the Eye of Harmony in GTNH", "具体可参考GTNH中的鸿蒙之眼");
+        add("rtt.machine.eye_of_harmony.tooltip.2", "Programming circuits 1~9 correspond to T1~T9 planets in GTNH's Eye of Harmony", "编程电路1~9对应GTNH鸿蒙之眼中的T1~T9星球");
+        add("rtt.machine.eye_of_harmony.tooltip.3", "Now, the machine will perform a random number calculation for recipe success probability during operation", "现在，机器在运行时会进行一次配方成功概率的随机数计算");
+        add("rtt.machine.eye_of_harmony.tooltip.4", "The calculated random number determines whether the input liquid spacetime is ≥ the random number", "计算出来的随机数用于判断是否输入了大于等于随机数的液态时空");
+        add("rtt.machine.eye_of_harmony.tooltip.5", "If the check fails, it will output half of the consumed starting EU", "如果判断失败，那么将会产出消耗的启动EU/2");
+        add("rtt.machine.eye_of_harmony.tooltip.6", "If 64 eternal catalysts are placed, the required liquid spacetime will be halved", "如何还放入了永恒催化剂 * 64个，那么需要的液态时空将会/2");
     }
 }

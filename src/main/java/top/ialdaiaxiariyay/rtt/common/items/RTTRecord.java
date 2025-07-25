@@ -65,7 +65,7 @@ public class RTTRecord {
             }
         };
     }
-    
+
     public static IInteractionItem defaultSoundInteraction(String soundName, int cooldownTicks, String name) {
         return createSoundInteraction(soundName, 4, cooldownTicks, name); // 默认使用4级权限
     }

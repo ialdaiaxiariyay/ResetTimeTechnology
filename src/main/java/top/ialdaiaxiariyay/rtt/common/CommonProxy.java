@@ -17,11 +17,11 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import top.ialdaiaxiariyay.rtt.RTT;
 import top.ialdaiaxiariyay.rtt.api.machine.RTTCapability;
 import top.ialdaiaxiariyay.rtt.common.data.RTTCreativeModeTabs;
-import top.ialdaiaxiariyay.rtt.forge.NetworkHandler;
-import top.ialdaiaxiariyay.rtt.common.data.machines.RTTMachines;
 import top.ialdaiaxiariyay.rtt.common.data.RTTRecipeTypes;
+import top.ialdaiaxiariyay.rtt.common.data.machines.RTTMachines;
 import top.ialdaiaxiariyay.rtt.common.data.materials.RTTMaterials;
 import top.ialdaiaxiariyay.rtt.config.RTTConfigHolder;
+import top.ialdaiaxiariyay.rtt.forge.NetworkHandler;
 
 import static top.ialdaiaxiariyay.rtt.api.registries.RTTRegistration.REGISTRATE;
 

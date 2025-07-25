@@ -1,19 +1,14 @@
 package top.ialdaiaxiariyay.rtt.api.registries;
 
-import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.data.recipe.builder.GTRecipeBuilder;
 
-import com.gregtechceu.gtceu.utils.FormattingUtil;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.resources.ResourceLocation;
 
-import org.openjdk.nashorn.internal.objects.annotations.Getter;
-import org.openjdk.nashorn.internal.objects.annotations.Setter;
 import top.ialdaiaxiariyay.rtt.api.recipe.RPRecipeCapability;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Arrays;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault

@@ -2,14 +2,13 @@ package top.ialdaiaxiariyay.rtt.data.recipe;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
-
-import com.gregtechceu.gtceu.common.data.GTMachines;
 import com.gregtechceu.gtceu.common.data.machines.GTResearchMachines;
-import com.gregtechceu.gtceu.common.machine.storage.CreativeChestMachine;
-import com.hepdd.gtmthings.data.CreativeMachines;
+
+import com.lowdragmc.lowdraglib.side.fluid.FluidStack;
+
 import net.minecraft.data.recipes.FinishedRecipe;
 
-import net.minecraft.world.item.Items;
+import com.hepdd.gtmthings.data.CreativeMachines;
 import org.gtlcore.gtlcore.common.data.*;
 import org.gtlcore.gtlcore.common.data.machines.AdvancedMultiBlockMachine;
 import org.gtlcore.gtlcore.utils.Registries;
@@ -69,7 +68,7 @@ public class MiscRecipes {
                 .inputItems(AdvancedMultiBlockMachine.CREATE_COMPUTATION, 64)
                 .inputItems(AdvancedMultiBlockMachine.CREATE_AGGREGATION, 64)
                 .inputItems(CreativeMachines.CREATIVE_LASER_INPUT_HATCH, 8)
-                .inputItems(GTResearchMachines.CREATIVE_DATA_ACCESS_HATCH,8)
+                .inputItems(GTResearchMachines.CREATIVE_DATA_ACCESS_HATCH, 8)
                 .inputItems(Registries.getItem("gtceu:max_buffer"), 64)
                 .inputItems(GTLItems.SENSOR_MAX, 64)
                 .inputItems(Registries.getItem("kubejs:hyper_stable_self_healing_adhesive"), 1536)
@@ -78,7 +77,7 @@ public class MiscRecipes {
                 .inputItems(Registries.getItem("gtlcore:compressed_pufferfish"), 32)
                 .inputFluids(GTLMaterials.PrimordialMatter.getFluid(24000000))
                 .inputFluids(GTLMaterials.Infinity.getFluid(24000000))
-                .inputFluids(GTLMaterials.Miracle.getFluid(24000000))
+                .inputFluids(FluidStack.create(Registries.getFluid("gtlcecore:miracle"), 24000000))
                 .inputFluids(GTLMaterials.SuperMutatedLivingSolder.getFluid(24000000))
                 .inputFluids(GTLMaterials.Eternity.getFluid(110592))
                 .inputFluids(GTLMaterials.TranscendentMetal.getFluid(18432))

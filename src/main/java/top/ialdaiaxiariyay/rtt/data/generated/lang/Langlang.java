@@ -15,7 +15,7 @@ public class Langlang {
         add("config.rtt.option.COOLDOWN_TICKS", "Set Warp Spindle cooldown", "设置时空扭曲之钥冷却时间");
         add("config.rtt.option.MachineRendered", "Open or Off Machine Rendered", "开启或关闭机器渲染");
         add("config.jade.plugin_rtt.rp_container_provider", "[RTT] RP Container Provider", "[RTT] RP槽");
-        add("config.jade.plugin_rtt.recipe_logic_provider","[RTT] Recipe Logic","[RTT] 配方信息");
+        add("config.jade.plugin_rtt.recipe_logic_provider", "[RTT] Recipe Logic", "[RTT] 配方信息");
         add("rtt.a_place_in_the_sunshine", "ひだまりの場所", "ひだまりの場所");
         add("rtt.harm_stimuli", "Harm Stimuli", "Harm Stimuli");
         add("rtt.harmonious", "Harmonious", "Harmonious");
